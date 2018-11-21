@@ -6,38 +6,197 @@
 \usepackage{amsfonts, amsmath, amssymb}
 \usepackage[mathscr]{euscript}
 \usepackage{enumitem}
+\usepackage[onehalfspacing]{setspace}
+%\usepackage[singlespacing]{setspace}
+%\usepackage[doublespacing]{setspace}
+
 
 \begin{document}
 
-\begin{karte}[Stochastik-I]	{Eigenschaften des Maﬂintegrals}[Kapitel 2.4]
-$ f,g \in \overline{Z\XcalA} \ \textrm{und} \ \XcalAmue $ Maﬂraum, dg:
+\begin{karte}[Stochastik-I]{Eigenschaften des Maﬂintegrals}[2.4.4]
+
+$ f,g \in \overline{Z\XcalA} $ und $ \XcalAmu $ Maﬂraum, d.g.:
+
 \begin{enumerate}[label=(\roman*)]
-	\item $ f = 0 \ \mueFastSicher \Longrightarrow \integral{}{}{f}{\mu} = 0 $
-	\item $ \integral{}{}{f}{\mu} = 0 \Longleftrightarrow f = 0 \ \mueFastSicher \
-	\textrm{(falls} \ f \geq 0 \textrm{)} $
-	\item $ \integral{}{}{g}{\mu} \ \textrm{existiert und} \ \integral{}{}{g}{\mu} = \integral{}{}{f}{\mu} \ \Longleftarrow \vspace{0.15 cm} $
-	\newline
-	$ \textrm{(falls} \ \integral{}{}{f}{\mu} \ \textrm{existiert und} \ f = g \ \mueFastSicher \textrm{)} $
-	\item $ f \ \mueIntegrierbar \  \Longrightarrow f \ \textrm{ist} \ \mueFastSicher \ \textrm{endlich} $
+
+\item $ f = 0 \ \mae \Longrightarrow \integral{}{}{f}{\mu} = 0 $
+
+\item $ \integral{}{}{f}{\mu} = 0 \Longleftrightarrow f = 0 \ \mae $
+(falls $ f \geq 0 $)
+	
+\item $ \integral{}{}{g}{\mu} $ existiert und $ \integral{}{}{g}{\mu} = \integral{}{}{f}{\mu} \ \Longleftarrow $
+\vspace{0.15 cm}
+\newline
+(falls $ \integral{}{}{f}{\mu} $ existiert und $ f = g \ \mae $)
+	
+\item $ f \ \mintable \ \Longrightarrow f $ ist endlich $ \mae $
+
 \end{enumerate}
-\end{karte}
-
-\begin{karte}[Stochastik-I]	{Eigenschaften des Maﬂintegrals}[Kapitel 2.4]
-	$ f,g \in \overline{Z\XcalA} \ \textrm{und} \ \XcalAmue $ Maﬂraum, dg:
-	\begin{enumerate}[label=(\roman*)]
-		\item $ \textrm{Zeige} \ AUS(f) \textrm{, wobei} \ f = I \textrm{,} \  \forall \: A \: \in \: \calA $
-		\item $ \integral{}{}{f}{\mu} = 0 \Longleftrightarrow f = 0 \ \mueFastSicher \
-		\textrm{(falls} \ f \geq 0 \textrm{)} $
-		\item $ \integral{}{}{g}{\mu} \ \textrm{existiert und} \ \integral{}{}{g}{\mu} = \integral{}{}{f}{\mu} \ \Longleftarrow \vspace{0.15 cm} $
-		\newline
-		$ \textrm{(falls} \ \integral{}{}{f}{\mu} \ \textrm{existiert und} \ f = g \ \mueFastSicher \textrm{)} $
-		\item $ f \ \mueIntegrierbar \  \Longrightarrow f \ \textrm{ist} \ \mueFastSicher \ \textrm{endlich} $
-		\item 
-	\end{enumerate}
-\end{karte}
-
-\begin{karte}[Stochastik-I]	{}[Kapitel 2.4.]
 
 \end{karte}
+
+
+\begin{karte}[Stochastik-I]{Algebraische Induktion}[2.4.15]
+
+$ f,g \in \overline{Z\XcalA} $ und $ \XcalAmu $ Maﬂraum, d.g.:
+
+\begin{enumerate}[label=(\roman*)]
+
+\item Zeige $ AUS(f) $, wobei $ f = I_A $, $ \forall A \in \calA $
+
+\item Zeige $ AUS(f) $, wobei $ f = \alpha I_A $, $ \forall A \in \calA $
+
+\item Zeige $ AUS(f) \ \forall f \in \EplusXcalA $
+
+\item Zeige $ AUS(f) \ \forall f \in \ZplusXcalAinf $
+
+\item Zeige $ AUS(f) \ \forall f \in \ZXcalAinf $
+\end{enumerate}
+
+\end{karte}
+
+
+\begin{karte}[Stochastik-I]{Satz von der monotonen Konvergenz}[2.4.17]
+
+Sei $ \XcalAmu $ Maﬂraum, $ (f_n)_{n\in\R} $ eine $ \mae $ mon wachs \\
+Folge n-neg Funktionen aus $ \ZXcalAinf  $ und $ f $ eine Funktion, \\
+die $ \mae \ f(x) = lim_{n\to\infty} $, $ f_n (x) $ erf¸llt, d.g.:
+
+$$ \integral{}{}{\lim_{n\to\infty} f_n}{\mu} = \integral{}{}{f}{\mu} = \lim_{n\to\infty} \integral{}{}{f_n}{\mu} $$
+
+\end{karte}
+
+
+\begin{karte}[Stochastik-I]{Satz von B. Levi}[2.4.18]
+
+Sei $ \XcalAmu $ Maﬂraum, $ (f_n)_{n\in\N} $ Folge n-neg Funktionen \\
+aus $ \ZXcalAinf $, d.g.:
+
+$$ \integral{}{}{\summ{n=1}{\infty}{} \, f_n}{\mu} = \summ{n=1}{\infty}{\integral{}{}{f_n}{\mu}} $$
+
+\end{karte}
+
+
+\begin{karte}[Stochastik-I]{Lemma von Fatou}[2.4.19]
+
+Sei $ \XcalAmu $ Maﬂraum und $ (f_n)_{n\in\N} $ eine Folge n-neg \\
+Funktionen aus $ \ZXcalAinf $, d.g.:
+
+$$ \integral{}{}{\liminf_{n\to\infty} f_n }{\mu} \ \leq \ \liminf_{n\to\infty} \integral{}{}{f_n}{\mu} $$
+
+\end{karte}
+
+
+\begin{karte}[Stochastik-I]{Lebesgues Satz von der majorisierten Konvergenz}[2.4.20]
+
+Sei $ \XcalAmu $ Maﬂraum, $ (fn)_{n\in\N} $ Folge aus $ \ZXcalAinf $, die \\ punktweise gegen eine Funktion $ f $ konvergieren, $ g $ eine \\
+n-neg $ \mintable $e Funktion mit der Eigenschaft, dass \\
+$ |f_n| \leq g $, $ \mae $, dann folgt, dass $ f $ und $ f_n \ \mintable $ \\
+sind $\forall n \in \N $ und \\
+
+$$ \integral{}{}{f}{\mu} = \integral{}{}{\lim_{n\to\infty} f_n}{\mu} = \lim_{n\to\infty} \integral{}{}{f_n}{\mu} $$
+
+\end{karte}
+
+
+\begin{karte}[Stochastik-I]{Lebesgues Satz von der majorisierten Konvergenz}[2.4.20]
+	
+\end{karte}
+
+
+\begin{karte}[Stochastik-I]{}[]
+	
+\end{karte}
+
+
+\begin{karte}[Stochastik-I]{}[]
+	
+
+\end{karte}
+
+\begin{karte}[Stochastik-I]{}[]
+
+	
+\end{karte}
+
+
+\begin{karte}[Stochastik-I]{}[]
+	
+\end{karte}
+
+
+\begin{karte}[Stochastik-I]{}[]
+	
+
+\end{karte}
+
+\begin{karte}[Stochastik-I]{}[]
+
+	
+\end{karte}
+
+
+\begin{karte}[Stochastik-I]{}[]
+	
+\end{karte}
+
+
+\begin{karte}[Stochastik-I]{}[]
+	
+
+\end{karte}
+
+\begin{karte}[Stochastik-I]{}[]
+
+	
+\end{karte}
+
+
+\begin{karte}[Stochastik-I]{}[]
+	
+\end{karte}
+
+
+\begin{karte}[Stochastik-I]{}[]
+	
+
+\end{karte}
+
+\begin{karte}[Stochastik-I]{}[]
+
+	
+\end{karte}
+
+
+\begin{karte}[Stochastik-I]{}[]
+	
+\end{karte}
+
+
+\begin{karte}[Stochastik-I]{}[]
+	
+
+\end{karte}
+
+\begin{karte}[Stochastik-I]{}[]
+	
+\end{karte}
+
+
+\begin{karte}[Stochastik-I]{}[]
+	
+\end{karte}
+
+
+\begin{karte}[Stochastik-I]{}[]
+	
+
+\end{karte}
+
+\begin{karte}[Stochastik-I]{}[]
+
+	
+\end{karte}
+
 
 \end{document}

@@ -2,20 +2,35 @@
 \ProvidesClass{kartei}[2011/12/31 Karteikarten in LaTeX, Version 1.8b2]
 \newcommand{\setcardpagelayout}{}
 
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+
 \newcommand{\calA}{\mathscr{A}}
 \newcommand{\calB}{\mathscr{B}}
 \newcommand{\calC}{\mathscr{C}}
 \newcommand{\calX}{\mathscr{X}}
 \newcommand{\calY}{\mathscr{Y}}
 \newcommand{\calZ}{\mathscr{Z}}
+
 \newcommand{\XcalA}{(X,\calA)}
 \newcommand{\YcalB}{(Y,\calB)}
 \newcommand{\ZcalC}{(Z,\calC)}
-\newcommand{\XcalAmue}{(X,\calA,\mu)}
-\newcommand{\integral}[4]{\int_{#1}^{#2} \! #3 \, \mathrm{d}#4}
 
-\newcommand{\mueFastSicher}{\mu-f.s.}
-\newcommand{\mueIntegrierbar}{\mu-\textrm{integrierbar}}
+\newcommand{\XcalAmu}{(X,\calA,\mu)}
+\newcommand{\EplusXcalA}{E_+(X,\calA)}
+\newcommand{\ZXcalA}{Z(X,\calA)}
+\newcommand{\ZplusXcalA}{Z_+(X,\calA)}
+\newcommand{\ZXcalAinf}{\overline{Z(X,\calA)}}
+\newcommand{\ZplusXcalAinf}{\overline{Z_+(X,\calA)}}
+
+\newcommand{\integral}[4]{\int_{#1}^{#2} \! #3 \, \textrm{d}#4}
+\newcommand{\summ}[3]{\sum_{#1}^{#2} #3}
+\newcommand{\mae}{\mu-f.s.}
+\newcommand{\mintable}{\mu-\textrm{integrierbar}}
+
+%\newcommand{\lineSpace}{\vspace{0.15 cm}}
 
 \makeatletter
 %
@@ -363,7 +378,7 @@
 \lohead{\dasfach{#1}}
 \rohead{\derkommentar{#3}}
 \thispagestyle{scrheadings}
-~\vfill{~\hfill \parbox[t]{.9\textwidth}{\centering \Large #2}\hfill~}\vfill~
+~\vfill{~\hfill \parbox[t]{.9\textwidth}{\centering \Huge #2}\hfill~}\vfill~
 \refstepcounter{CardID}
 \newpage%
 }% Ende Vor der Umgebung
