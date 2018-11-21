@@ -2,6 +2,7 @@
 \ProvidesClass{kartei}[2011/12/31 Karteikarten in LaTeX, Version 1.8b2]
 \newcommand{\setcardpagelayout}{}
 
+\let\t\textrm
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\C}{\mathbb{C}}
