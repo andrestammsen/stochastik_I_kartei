@@ -4,6 +4,7 @@
 \usepackage{ngerman}
 \usepackage[latin1]{inputenc}
 \usepackage{amsfonts, amsmath, amssymb}
+\usepackage{bm}
 \usepackage[mathscr]{euscript}
 \usepackage{enumitem}
 \usepackage[onehalfspacing]{setspace}
@@ -15,22 +16,18 @@
 
 \begin{karte}[Stochastik-I]{Eigenschaften des Maﬂintegrals}[2.4.4]
 
-$ f,g \in \overline{Z\XcalA} $ und $ \XcalAmu $ Maﬂraum, d.g.:
+$ f,g \in \overline{Z\XcalA} $ und $ \XcalAmu $ Maﬂraum, dg:
 
 \begin{enumerate}[label=(\roman*)]
 
 \item $ f = 0 \ \mae \Longrightarrow \integral{}{}{f}{\mu} = 0 $
-
 \item $ \integral{}{}{f}{\mu} = 0 \Longleftrightarrow f = 0 \ \mae $
 (falls $ f \geq 0 $)
-	
 \item $ \integral{}{}{g}{\mu} $ existiert und $ \integral{}{}{g}{\mu} = \integral{}{}{f}{\mu} \ \Longleftarrow $
 \vspace{0.15 cm}
 \newline
 (falls $ \integral{}{}{f}{\mu} $ existiert und $ f = g \ \mae $)
-	
 \item $ f \ \mintable \ \Longrightarrow f $ ist endlich $ \mae $
-
 \end{enumerate}
 
 \end{karte}
@@ -38,18 +35,13 @@ $ f,g \in \overline{Z\XcalA} $ und $ \XcalAmu $ Maﬂraum, d.g.:
 
 \begin{karte}[Stochastik-I]{Algebraische Induktion}[2.4.15]
 
-$ f,g \in \overline{Z\XcalA} $ und $ \XcalAmu $ Maﬂraum, d.g.:
+$ f,g \in \overline{Z\XcalA} $ und $ \XcalAmu $ Maﬂraum, dg:
 
 \begin{enumerate}[label=(\roman*)]
-
 \item Zeige $ AUS(f) $, wobei $ f = I_A $, $ \forall A \in \calA $
-
 \item Zeige $ AUS(f) $, wobei $ f = \alpha I_A $, $ \forall A \in \calA $
-
 \item Zeige $ AUS(f) \ \forall f \in \EplusXcalA $
-
 \item Zeige $ AUS(f) \ \forall f \in \ZplusXcalAinf $
-
 \item Zeige $ AUS(f) \ \forall f \in \ZXcalAinf $
 \end{enumerate}
 
@@ -58,21 +50,25 @@ $ f,g \in \overline{Z\XcalA} $ und $ \XcalAmu $ Maﬂraum, d.g.:
 
 \begin{karte}[Stochastik-I]{Satz von der monotonen Konvergenz}[2.4.17]
 
-Sei $ \XcalAmu $ Maﬂraum, $ (f_n)_{n\in\R} $ eine $ \mae $ mon wachs \\
-Folge n-neg Funktionen aus $ \ZXcalAinf  $ und $ f $ eine Funktion, \\
-die $ \mae \ f(x) = lim_{n\to\infty} $, $ f_n (x) $ erf¸llt, d.g.:
-
-$$ \integral{}{}{\lim_{n\to\infty} f_n}{\mu} = \integral{}{}{f}{\mu} = \lim_{n\to\infty} \integral{}{}{f_n}{\mu} $$
+Sei $ \XcalAmu $ Maﬂraum, $ (f_n)_{n\in\R} $ eine $ \mae $ mon wachs
+Folge n-neg Funktionen aus $ \ZXcalAinf  $ und $ f $ eine Funktion,
+die $ \mae \ f(x) = lim_{n\to\infty} $, $ f_n (x) $ erf¸llt, dg:
+\cmone
+$$
+\integral{}{}{\lim_{n\to\infty} f_n}{\mu} = \integral{}{}{f}{\mu} = \lim_{n\to\infty} \integral{}{}{f_n}{\mu}
+$$
 
 \end{karte}
 
 
 \begin{karte}[Stochastik-I]{Satz von B. Levi}[2.4.18]
 
-Sei $ \XcalAmu $ Maﬂraum, $ (f_n)_{n\in\N} $ Folge n-neg Funktionen \\
-aus $ \ZXcalAinf $, d.g.:
-
-$$ \integral{}{}{\summ{n=1}{\infty}{} \, f_n}{\mu} = \summ{n=1}{\infty}{\integral{}{}{f_n}{\mu}} $$
+Sei $ \XcalAmu $ Maﬂraum, $ (f_n)_{n\in\N} $ Folge n-neg Funktionen
+aus $ \ZXcalAinf $, dg:
+\cmone
+$$
+\integral{}{}{\summ{n=1}{\infty}{} \, f_n}{\mu} = \summ{n=1}{\infty}{\integral{}{}{f_n}{\mu}}
+$$
 
 \end{karte}
 
@@ -80,123 +76,114 @@ $$ \integral{}{}{\summ{n=1}{\infty}{} \, f_n}{\mu} = \summ{n=1}{\infty}{\integra
 \begin{karte}[Stochastik-I]{Lemma von Fatou}[2.4.19]
 
 Sei $ \XcalAmu $ Maﬂraum und $ (f_n)_{n\in\N} $ eine Folge n-neg \\
-Funktionen aus $ \ZXcalAinf $, d.g.:
-
-$$ \integral{}{}{\liminf_{n\to\infty} f_n }{\mu} \ \leq \ \liminf_{n\to\infty} \integral{}{}{f_n}{\mu} $$
-
-\end{karte}
-
-
-\begin{karte}[Stochastik-I]{Lebesgues Satz von der majorisierten Konvergenz}[2.4.20]
-
-Sei $ \XcalAmu $ Maﬂraum, $ (fn)_{n\in\N} $ Folge aus $ \ZXcalAinf $, die \\ punktweise gegen eine Funktion $ f $ konvergieren, $ g $ eine \\
-n-neg $ \mintable $e Funktion mit der Eigenschaft, dass \\
-$ |f_n| \leq g $, $ \mae $, dann folgt, dass $ f $ und $ f_n \ \mintable $ \\
-sind $\forall n \in \N $ und \\
-
-$$ \integral{}{}{f}{\mu} = \integral{}{}{\lim_{n\to\infty} f_n}{\mu} = \lim_{n\to\infty} \integral{}{}{f_n}{\mu} $$
+Funktionen aus $ \ZXcalAinf $, dg:
+\cmone
+$$
+\integral{}{}{\liminf_{n\to\infty} f_n }{\mu} \ \leq \ \liminf_{n\to\infty} \integral{}{}{f_n}{\mu}
+$$
 
 \end{karte}
 
 
 \begin{karte}[Stochastik-I]{Lebesgues Satz von der majorisierten Konvergenz}[2.4.20]
+
+Sei $ \XcalAmu $ Maﬂraum, $ (fn)_{n\in\N} $ Folge aus $ \ZXcalAinf $, die \\ punktweise gegen eine Funktion $ f $ konvergieren, $ g $ eine
+n-neg $ \mintable $e Funktion mit der Eigenschaft, dass
+$ |f_n| \leq g $, $ \mae $, dann folgt, dass $ f $ und $ f_n \ \mintable $ sind $\forall n \in \N $ und
+\cmone
+$$
+\integral{}{}{f}{\mu} = \integral{}{}{\lim_{n\to\infty} f_n}{\mu} = \lim_{n\to\infty} \integral{}{}{f_n}{\mu}
+$$
+
+\end{karte}
+
+
+\begin{karte}[Stochastik-I]{Transformationssatz f¸r Maﬂintegrale}[2.4.21]
+
+Sei $ T:\XcalAmu \longrightarrow \YcalB $ eine $ \calA - \calB $ mb Abbildung und $ (Y,\calB, \mu_{T}) $ das induzierte Bildmaﬂ. Ferner sei $ f \in \ZYcalB $ eine numerische Abbildung. Dann ist $ f \circ T \in \ZXcalAinf $, dg $ \forall B \in \calB $ (falls mind. ein Integral existiert):
+\cmhalf
+$$
+\integral{T^{-1}(B)}{}{f \circ T}{\mu} = \integral{B}{}{f}{\mu_T}
+$$
+\end{karte}
+
+
+\begin{karte}[Stochastik-I]{Standardnormalverteilung}[unter 2.4.8]
+\cmone
+$$
+\xi \sim \calN (1,0)
+$$
+\vspace{0.5 cm}
+$$
+\integral{A}{}{\frac{1}{\sqrt{2\pi}}\exp(\frac{-x^{2}}{2})}{x}
+$$
+
+\end{karte}
+
+
+
+\begin{karte}[Stochastik-I]{Radon-Nikodym Dichte}[2.4.22]
+Sei $ \XcalAmu $ Maﬂraum und $ f \in \ZplusXcalAinf $. Dann wird wie unten ein neues Maﬂ $ \XcalAnu $ definiert. Die Funktion $ f $ heiﬂt \textbf{$ \mu $-Dichte von $ \nu $} oder \textbf{Radon-Nikodym Dichte} von $ \nu $ bzgl $ \mu $:
+\cmhalf
+$$
+\nu: \ \calA \ni A \longrightarrow \nu(A) := \integral{A}{}{f}{\mu} \equiv \integral{}{}{f \, I_A}{\mu}
+$$
+\newline
+Schreibweise: $ d \nu = f d \mu $ (bzw. $ \nu = f \, \mu $, $ f = \frac{d\nu}{d\mu}) $
+
+\end{karte}
+
+
+\begin{karte}[Stochastik-I]{Name gesucht :)}[2.4.23]
+
+Sei $ \XcalAmu $ Maﬂraum, $ f \in \ZplusXcalAinf $, $ d\nu := f \, d\mu $, $ \xi \in \ZXcalAinf $ eine mb Funktion, dg:
+\vspace{0.5 cm}
+$$
+\xi \in \LoneXcalAnu \Longleftrightarrow \xi \cdot f \in \LoneXcalAmu
+$$
 	
 \end{karte}
 
 
-\begin{karte}[Stochastik-I]{}[]
+\begin{karte}[Stochastik-I]{Satz von Radon-Nikodym}[2.4.24]
+
+Seien $ \mu $, $ \nu $ Maﬂe auf dem mb Raum $ \XcalA$, $ \mu \ \sigma $-finit, dann sind ‰quivalent:
+\cmhalf
+\begin{enumerate}[label=(\roman*)]
+\item $ \nu $ besitzt eine Dichte bzgl $ \mu $
+\item $ \forall A \in \calA$: $ \mu(A) = 0 \Longrightarrow \nu(A) = 0 $
+\end{enumerate}
+
+\end{karte}
+
+
+\begin{karte}[Stochastik-I]{absolut-stetig \\ \& \\ singul‰r}[2.4.25]
+
+$ \XcalA $ mb Raum, Maﬂe $\mu $ und $ \nu $:
+\cmhalf
+\begin{enumerate}[label=(\roman*)]
+\item $ \nu $ besitzt eine Dichte bzgl $ \mu $
+\item $ \forall A \in \calA $: $ \mu(A) = 0 \Longrightarrow \nu(A) = 0 $
+\end{enumerate}
+
+\end{karte}
+
+
+\begin{karte}[Stochastik-I]{Zerlegungssatz von Lebesgue}[2.4.25]
+$ \XcalA $ mb Raum, Maﬂe $ \mu $ und $ \nu $:
+\cmone
+\begin{itemize}
+\item $ \nu $ l‰sst sich auf genau eine Weise als $ \nu = \nu_1 + \nu_2 $ darstellen
+\item $ \nu_1 $ und $ \nu_2 $ sind Maﬂe auf $ \XcalA $
+\item $ \nu_1 \ll \mu $
+\item $ \nu_2 \perp \mu $
+\end{itemize}
 	
 \end{karte}
 
 
-\begin{karte}[Stochastik-I]{}[]
-	
-
-\end{karte}
-
-\begin{karte}[Stochastik-I]{}[]
-
+\begin{karte}[Stochastik-I]{}[2.4.23]
 	
 \end{karte}
-
-
-\begin{karte}[Stochastik-I]{}[]
-	
-\end{karte}
-
-
-\begin{karte}[Stochastik-I]{}[]
-	
-
-\end{karte}
-
-\begin{karte}[Stochastik-I]{}[]
-
-	
-\end{karte}
-
-
-\begin{karte}[Stochastik-I]{}[]
-	
-\end{karte}
-
-
-\begin{karte}[Stochastik-I]{}[]
-	
-
-\end{karte}
-
-\begin{karte}[Stochastik-I]{}[]
-
-	
-\end{karte}
-
-
-\begin{karte}[Stochastik-I]{}[]
-	
-\end{karte}
-
-
-\begin{karte}[Stochastik-I]{}[]
-	
-
-\end{karte}
-
-\begin{karte}[Stochastik-I]{}[]
-
-	
-\end{karte}
-
-
-\begin{karte}[Stochastik-I]{}[]
-	
-\end{karte}
-
-
-\begin{karte}[Stochastik-I]{}[]
-	
-
-\end{karte}
-
-\begin{karte}[Stochastik-I]{}[]
-	
-\end{karte}
-
-
-\begin{karte}[Stochastik-I]{}[]
-	
-\end{karte}
-
-
-\begin{karte}[Stochastik-I]{}[]
-	
-
-\end{karte}
-
-\begin{karte}[Stochastik-I]{}[]
-
-	
-\end{karte}
-
 
 \end{document}

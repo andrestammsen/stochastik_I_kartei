@@ -3,6 +3,10 @@
 \newcommand{\setcardpagelayout}{}
 
 \let\t\textrm
+\newcommand{\cmhalf}{\vspace{0.5 cm}}
+\newcommand{\cmone}{\vspace{1 cm}}
+\newcommand{\cmonehalf}{\vspace{1.5 cm}}
+
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\C}{\mathbb{C}}
@@ -11,6 +15,7 @@
 \newcommand{\calA}{\mathscr{A}}
 \newcommand{\calB}{\mathscr{B}}
 \newcommand{\calC}{\mathscr{C}}
+\newcommand{\calN}{\mathscr{N}}
 \newcommand{\calX}{\mathscr{X}}
 \newcommand{\calY}{\mathscr{Y}}
 \newcommand{\calZ}{\mathscr{Z}}
@@ -20,18 +25,23 @@
 \newcommand{\ZcalC}{(Z,\calC)}
 
 \newcommand{\XcalAmu}{(X,\calA,\mu)}
+\newcommand{\XcalAnu}{(X,\calA,\nu)}
 \newcommand{\EplusXcalA}{E_+(X,\calA)}
 \newcommand{\ZXcalA}{Z(X,\calA)}
+\newcommand{\ZYcalB}{\overline{Z(Y,\calB)}}
 \newcommand{\ZplusXcalA}{Z_+(X,\calA)}
+\newcommand{\ZplusYcalB}{Z_+(Y,\calB)}
 \newcommand{\ZXcalAinf}{\overline{Z(X,\calA)}}
+\newcommand{\ZYcalBinf}{\overline{Z(Y,\calB)}}
 \newcommand{\ZplusXcalAinf}{\overline{Z_+(X,\calA)}}
+\newcommand{\ZplusYcalBinf}{\overline{Z_+(Y,\calB)}}
+\newcommand{\LoneXcalAnu}{L^1(X,\calA,\nu)}
+\newcommand{\LoneXcalAmu}{L^1(X,\calA,\mu)}
 
 \newcommand{\integral}[4]{\int_{#1}^{#2} \! #3 \, \textrm{d}#4}
 \newcommand{\summ}[3]{\sum_{#1}^{#2} #3}
 \newcommand{\mae}{\mu-f.s.}
 \newcommand{\mintable}{\mu-\textrm{integrierbar}}
-
-%\newcommand{\lineSpace}{\vspace{0.15 cm}}
 
 \makeatletter
 %
