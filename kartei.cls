@@ -38,8 +38,16 @@
 \newcommand{\LoneXcalAnu}{L^1(X,\calA,\nu)}
 \newcommand{\LoneXcalAmu}{L^1(X,\calA,\mu)}
 
-\newcommand{\integral}[4]{\int_{#1}^{#2} \! #3 \, \textrm{d}#4}
+\newcommand{\intt}[4]{\int_{#1}^{#2} \! #3 \, \textrm{d}#4}
+\newcommand{\inttt}[5]{\int_{#1}^{#2} \! #3 \, #4 (\textrm{d}#5)}
 \newcommand{\summ}[3]{\sum_{#1}^{#2} #3}
+\newcommand{\prodd}[3]{\prod_{#1}^{#2} #3}
+\newcommand{\timess}[3]{\times_{#1}^{#2}{#3}}
+\newcommand{\otimess}[3]{\otimes_{#1}^{#2}{#3}}
+\newcommand{\btimess}[3]{\bigtimes_{#1}^{#2}{#3}}
+\newcommand{\botimess}[3]{\bigotimes_{#1}^{#2}{#3}}
+\newcommand{\bcupp}[3]{\bigcup_{#1}^{#2}{#3}}
+\newcommand{\bcapp}[3]{\bigcap_{#1}^{#2}{#3}}
 \newcommand{\mae}{\mu-f.s.}
 \newcommand{\mintable}{\mu-\textrm{integrierbar}}
 

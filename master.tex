@@ -1,9 +1,8 @@
 \documentclass[a7paper,11pt,print,grid=front]{kartei}
-
 \usepackage[T1]{fontenc}
 \usepackage{ngerman}
 \usepackage[latin1]{inputenc}
-\usepackage{amsfonts, amsmath, amssymb}
+\usepackage{amsfonts, amsmath, amssymb, mathtools}
 \usepackage{bm}
 \usepackage[mathscr]{euscript}
 \usepackage{enumitem}
@@ -20,13 +19,13 @@ $ f,g \in \overline{Z\XcalA} $ und $ \XcalAmu $ Maﬂraum, dg:
 
 \begin{enumerate}[label=(\roman*)]
 
-\item $ f = 0 \ \mae \Longrightarrow \integral{}{}{f}{\mu} = 0 $
-\item $ \integral{}{}{f}{\mu} = 0 \Longleftrightarrow f = 0 \ \mae $
+\item $ f = 0 \ \mae \Longrightarrow \intt{}{}{f}{\mu} = 0 $
+\item $ \intt{}{}{f}{\mu} = 0 \Longleftrightarrow f = 0 \ \mae $
 (falls $ f \geq 0 $)
-\item $ \integral{}{}{g}{\mu} $ existiert und $ \integral{}{}{g}{\mu} = \integral{}{}{f}{\mu} \ \Longleftarrow $
+\item $ \intt{}{}{g}{\mu} $ existiert und $ \intt{}{}{g}{\mu} = \intt{}{}{f}{\mu} \ \Longleftarrow $
 \vspace{0.15 cm}
 \newline
-(falls $ \integral{}{}{f}{\mu} $ existiert und $ f = g \ \mae $)
+(falls $ \intt{}{}{f}{\mu} $ existiert und $ f = g \ \mae $)
 \item $ f \ \mintable \ \Longrightarrow f $ ist endlich $ \mae $
 \end{enumerate}
 
@@ -55,7 +54,7 @@ Folge n-neg Funktionen aus $ \ZXcalAinf  $ und $ f $ eine Funktion,
 die $ \mae \ f(x) = lim_{n\to\infty} $, $ f_n (x) $ erf¸llt, dg:
 \cmone
 $$
-\integral{}{}{\lim_{n\to\infty} f_n}{\mu} = \integral{}{}{f}{\mu} = \lim_{n\to\infty} \integral{}{}{f_n}{\mu}
+\intt{}{}{\lim_{n\to\infty} f_n}{\mu} = \intt{}{}{f}{\mu} = \lim_{n\to\infty} \intt{}{}{f_n}{\mu}
 $$
 
 \end{karte}
@@ -67,7 +66,7 @@ Sei $ \XcalAmu $ Maﬂraum, $ (f_n)_{n\in\N} $ Folge n-neg Funktionen
 aus $ \ZXcalAinf $, dg:
 \cmone
 $$
-\integral{}{}{\summ{n=1}{\infty}{} \, f_n}{\mu} = \summ{n=1}{\infty}{\integral{}{}{f_n}{\mu}}
+\intt{}{}{\summ{n=1}{\infty}{} \, f_n}{\mu} = \summ{n=1}{\infty}{\intt{}{}{f_n}{\mu}}
 $$
 
 \end{karte}
@@ -79,7 +78,7 @@ Sei $ \XcalAmu $ Maﬂraum und $ (f_n)_{n\in\N} $ eine Folge n-neg \\
 Funktionen aus $ \ZXcalAinf $, dg:
 \cmone
 $$
-\integral{}{}{\liminf_{n\to\infty} f_n }{\mu} \ \leq \ \liminf_{n\to\infty} \integral{}{}{f_n}{\mu}
+\intt{}{}{\liminf_{n\to\infty} f_n }{\mu} \ \leq \ \liminf_{n\to\infty} \intt{}{}{f_n}{\mu}
 $$
 
 \end{karte}
@@ -92,7 +91,7 @@ n-neg $ \mintable $e Funktion mit der Eigenschaft, dass
 $ |f_n| \leq g $, $ \mae $, dann folgt, dass $ f $ und $ f_n \ \mintable $ sind $\forall n \in \N $ und
 \cmone
 $$
-\integral{}{}{f}{\mu} = \integral{}{}{\lim_{n\to\infty} f_n}{\mu} = \lim_{n\to\infty} \integral{}{}{f_n}{\mu}
+\intt{}{}{f}{\mu} = \intt{}{}{\lim_{n\to\infty} f_n}{\mu} = \lim_{n\to\infty} \intt{}{}{f_n}{\mu}
 $$
 
 \end{karte}
@@ -103,7 +102,7 @@ $$
 Sei $ T:\XcalAmu \longrightarrow \YcalB $ eine $ \calA - \calB $ mb Abbildung und $ (Y,\calB, \mu_{T}) $ das induzierte Bildmaﬂ. Ferner sei $ f \in \ZYcalB $ eine numerische Abbildung. Dann ist $ f \circ T \in \ZXcalAinf $, dg $ \forall B \in \calB $ (falls mind. ein Integral existiert):
 \cmhalf
 $$
-\integral{T^{-1}(B)}{}{f \circ T}{\mu} = \integral{B}{}{f}{\mu_T}
+\intt{T^{-1}(B)}{}{f \circ T}{\mu} = \intt{B}{}{f}{\mu_T}
 $$
 \end{karte}
 
@@ -115,7 +114,7 @@ $$
 $$
 \vspace{0.5 cm}
 $$
-\integral{A}{}{\frac{1}{\sqrt{2\pi}}\exp(\frac{-x^{2}}{2})}{x}
+\intt{A}{}{\frac{1}{\sqrt{2\pi}}\exp(\frac{-x^{2}}{2})}{x}
 $$
 
 \end{karte}
@@ -126,7 +125,7 @@ $$
 Sei $ \XcalAmu $ Maﬂraum und $ f \in \ZplusXcalAinf $. Dann wird wie unten ein neues Maﬂ $ \XcalAnu $ definiert. Die Funktion $ f $ heiﬂt \textbf{$ \mu $-Dichte von $ \nu $} oder \textbf{Radon-Nikodym Dichte} von $ \nu $ bzgl $ \mu $:
 \cmhalf
 $$
-\nu: \ \calA \ni A \longrightarrow \nu(A) := \integral{A}{}{f}{\mu} \equiv \integral{}{}{f \, I_A}{\mu}
+\nu: \ \calA \ni A \longrightarrow \nu(A) := \intt{A}{}{f}{\mu} \equiv \int{}{}{f \, I_A}{\mu}
 $$
 \newline
 Schreibweise: $ d \nu = f d \mu $ (bzw. $ \nu = f \, \mu $, $ f = \frac{d\nu}{d\mu}) $
@@ -182,8 +181,75 @@ $ \XcalA $ mb Raum, Maﬂe $ \mu $ und $ \nu $:
 \end{karte}
 
 
-\begin{karte}[Stochastik-I]{}[2.4.23]
+\begin{karte}[Stochastik-I]{kartesisches Produkt}[unter 2.5]
+
+$ (X_i, \calA_i)_{1 \leq i \leq n} $ mb R‰ume:
+\cmone
+$$
+X := \prodd{i=1}{n}{X_i} \equiv \btimess{i=1}{n}{X_i}
+$$
+
+\end{karte}
+
+
+\begin{karte}[Stochastik-I]{Projektionsabbildung}[unter 2.5]
+\textit{
+Alle Tupel werden auf ihre jeweils i-te Koordinate abgebildet, ‰hnlich einer orthogonalen Projektion auf eine Achse (aber formal anders). F¸r dieses i werden alle $ x_i $ aus $ X_i $ angenommen.
+}
+\cmone
+$$
+p_i: X \ni (x_q, x_2, ..., x_n) \longrightarrow p_i((x_1, ... x_n)) := x_i \in X_i
+$$
+
+\end{karte}
+
+
+\begin{karte}[Stochastik-I]{Produkt-$\sigma$-Algebra}[2.5.1]
+Die kleinste $\sigma$-Algebra, bzgl der alle $ n $ Projektionen mb sind, auch genannt das Produkt der $\sigma$-Algebren $ \calA_1, ..., \calA_n $:
+\cmhalf
+$$
+\botimess{i=1}{n}{\calA_i} := \calA_1 \times ... \times \calA_n := \sigma \left( \bcupp{i=1}{n}{p_i^{-1}} (\calA_i) \right) \equiv \sigma(p_i, ..., p_n)
+$$	
+\end{karte}
+
+
+\begin{karte}[Stochastik-I]{DAS Produktmaﬂ}[2.5.3]
+
+Das eind Produktmaﬂ $ \pi $ der Maﬂe $ \mu_1, \mu_2, ... , \mu_n $ auf \\
+$ \calA = \botimess{i=1}{n}{\calA_i} $ mit $ A_i \in \calA_I $ f¸r
+ $ 1 \leq i \leq n $ hat f¸r $ n $ $ \sigma $-finite \\
+ Maﬂr‰ume $ (X_i, \calA_i, \mu_i)_{1 \leq i \leq n} $ die folgende Eigenschaft und \\
+ mit $ \pi \equiv \botimess{i=1}{n}{\mu_i} $ ergibt sich ein neuer Maﬂraum:
+$$
+\pi (A_1 \times A_2 \times ... \times A_n) := \mu_1(A_1) \cdot \mu_2(A_2) \cdot ... \cdot \mu_n(A_n)
+$$
+$$
+\left( \btimess{i=1}{n}{X_i}, \, \botimess{i=1}{n}{\calA_i}, \, \botimess{i=1}{n}{\mu_i} \right)
+$$
+
+\end{karte}
+
+
+\begin{karte}[Stochastik-I]{Satz von Tonelli}[2.5.4]
 	
+$ (X_i, \calA_i, \mu_i) $ 2 $ \sigma $-finite Maﬂr‰ume, $ (X, \calA, \pi) $ Produktraum, eind best Produkt-Maﬂ $ \pi $, $ f \in \ZplusXcalAinf $ n-neg mb Funk:
+\begin{align*}
+(X_1, \calA_1) \ni x_1 \longrightarrow \inttt{}{}{f(x_1,x_2)}{\mu_2}{x_2} \in (\overline\R_\geq, \calB(\overline{\R}_\geq)\\
+\intt{}{}{f}{\pi} = \int{}{}{\left( \inttt{}{}{f(x_1,x_2)}{\mu_2}{x_2} \right) }{\mu_1(}{x_1}) \\	
+= \int{}{}{\left( \inttt{}{}{f(x_1,x_2)}{\mu_1}{x_1} \right) }{\mu_2(}{x_2})
+\end{align*}
+
+\end{karte}
+
+
+\begin{karte}[Stochastik-I]{Satz von Fubini}[2.5.5]
+
+$ (X_i, \calA_i, \mu_i) $ 2 $ \sigma $-finite Maﬂr‰ume, $ (X, \calA, \pi) $ der zug Produktraum mit dem eind best Produktmaﬂ $ \pi $, $ f \in \ZXcalAinf $ eine $ \pi $-integrierbare Funktion, dann gilt ebenfalls Tonelli.
+\cmhalf
+\textit
+{Zus‰tzlich wird also Integrierbarkeit bzgl des Produktmaﬂes gefordert. Daf¸r kann man bel, nicht nur n-neg Funktionen integrieren. Bei Tonelli reicht die Integrierbarkeit der iterierten Integrale aus. Bei der R¸ckf¸hrung mehr- auf eindimensionale Integrale ist die Reihenfolge bei beiden egal. 
+}
+
 \end{karte}
 
 \end{document}
