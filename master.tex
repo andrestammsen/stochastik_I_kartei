@@ -252,4 +252,277 @@ $ (X_i, \calA_i, \mu_i) $ 2 $ \sigma $-finite Maßräume, $ (X, \calA, \pi) $ der 
 
 \end{karte}
 
+
+\begin{karte}[Stochastik-I]{Experiment/\\Zufallsvektor/\\Zufallsvariable/\\Verteilung}[]
+
+\begin{enumerate}[label=(\roman*), noitemsep]
+\item 
+Im W-Raum $ (\Omega, \calA, \PP) $ ist ein \textbf{Experiment} oder ein $ k $-dim \textbf{Zufallsvektor} $ \xi = (\xi_1, \xi_2, ... , \xi_k) $ eine $ \calA - \calB_k^* $ mb Abb, im Spezialfall $ k = 1 $ eine 
+\vspace{0.3 cm} 
+\textbf{Zufallsvariable}:
+$ \xi: \Omega, \calA, \PP) \ni \omega \longrightarrow \xi(\omega) \in (\R_k, \calB_k^*) $
+\vspace{0.3 cm} 
+\item Ist $ \xi $ ein $ k $-dim Zufallsvektor, dann wird das Bildmaß $ (\R^k, \calB_k^*, \PP_\xi) $ (die \textbf{Verteilung} von $ \xi $ unter $ \PP $) definiert
+$$
+\PP_\xi: \calB_k^* \ni \calB \longrightarrow \PP_\xi(B) := \PP(\xi^{-1}(B))
+$$
+\end{enumerate}
+
+\end{karte}
+
+
+\begin{karte}[Stochastik-I]{Verteilungsfunktion}[3.1.2]
+
+Sei $ \xi $ ein $ k $-dimensionaler Zufallsvektor auf W-Raum \\\
+$ (\Omega, calA, \PP) $, dann wird die \textbf{Verteilungsfunktion} von $ \xi $, die die Verteilung $ \PP_\xi $ eindeutig festlegt, definiert durch
+$$
+F_\xi: \R^k \ni x \longrightarrow F_xi(x) := \PP(\xi \leq x) \in [0,1]
+$$
+\textit{Man schreibt auch $ \xi \sim F $, um anzudeuten, dass $ \xi $ die Verteilung besitzt, die zur Verteilungsfunktion $ F $ gehört.}
+
+\end{karte}
+
+
+\begin{karte}[Stochastik-I]{Eigenschaften\\Verteilungs-\\funktion}[]
+
+ZV $ \xi $, $ F_\xi \equiv F $ V-Funk, $ k = 1 $: $ F $ hat die Eigenschaften
+\begin{enumerate}[label=(\roman*)]
+\item
+$ F $ ist mon wachs
+\item
+$ lim_{x\to\infty} F(x) = 1 $
+\item
+$ lim_{x\to-\infty} F(x) = 0 $
+\item
+$ F $ ist rechtss stet: $ \lim_{n\to\infty} F(x_n) = F(x) $
+\item
+$ F $ hat linkss Limiten: $ \lim_{n\to\infty} F(x_n) $ existiert
+\item[]
+\textit{(für iv) und v): $ \forall (x_n)_{n \in \N} \subset \R $ mit $ x_n \downarrow_n x $)}
+\end{enumerate}
+
+\end{karte}
+
+
+\begin{karte}[Stochastik-I]{Quantil-\\funktion,\\Quantil-\\transformation}[3.1.4]
+
+Sei $ F: \R \ni x \longrightarrow F(x) \in [o,1] $ eine Verteilungsfunktion, dann die \textbf{Quantilfunktion} oder \textbf{Quantiltransformation} zu $ F $ definiert durch:
+$$F^{-1}: \ ]0,1] \ni u \longrightarrow F^{-1} := inf\{x: F(x) \geq u\} \in \overline{\R}
+$$
+
+\end{karte}
+
+
+\begin{karte}[Stochastik-I]{Gleichverteilung\\auf dem\\Einheits-\\intervall}[]	
+
+Eine Zufallvariable $ \eta $ heißt \textbf{gleichverteilt} auf dem Einheitsintervall gdw
+\cmhalf
+$$
+F_\eta (x) =
+\threepartdef{0}{x \leq 0}{x}{0 < x < 1}{1}{x \geq 1}
+$$
+
+\end{karte}
+
+
+\begin{karte}[Stochastik-I]{Darstellungssatz \\ von \\ Skorokhod}[]	
+
+Sei $ F: \R \ni x \longrightarrow F(x) \in [0,1] $ eine Verteilungsfunktion, $ F^-1 $ die zugehörige Quantilfunktion, $ \eta $ eine auf dem Einheitsintervall gleichverteilte Zufallsvariable, dg: \cmone \newline
+$ \xi := F^{-1} (\eta) $ ist eine nach $ F $ verteilte Zufallsvariable
+
+\end{karte}
+
+
+\begin{karte}[Stochastik-I]{stetig, \\ diskret \\ W-Funktion}[3.1.9]
+
+Die Verteilungsfunktion $ F $ kann stetig oder diskret sein. Dementsprechend kann die zugehörige Zufallsvariable $ \xi $ \textbf{stetig verteilt} oder \textbf{diskret verteilt} sein. Im diskreten Fall bestimmt die \textbf{Wahrscheinlichkeitsfunktion} ebenfalls auf eindeutige Weise die Verteilung von $ \xi $ mit \\
+$$
+p_\xi \equiv p_F \equiv p: S \ni x \longrightarrow p(x) := F(x) - F(x-) \in \, ]0,1]
+$$
+\textit{Die Wahrscheinlichkeitsfunktion bestimmt für die s Sprungstellen, ''wie hoch gesprungen wird''.}
+
+\end{karte}
+
+
+\begin{karte}[Stochastik-I]{Zerlegungssatz \\ für \\ Verteilungsfunktionen}[3.1.10]	
+
+Sei $ F $ eine bel Verteilungsfunktion, dg:
+\begin{enumerate}[label=(\roman*), noitemsep]
+\item
+Es gibt genau zwei Sub-Verteilungsfunktionen $ F_d $ und $ F_c $ mit $ F(x) = F_d (x) + F_c (x) \ \forall x \in \R $. Dabei ist $ F_c $ stetig und $ F_D $ eine Treppenfunktion.
+\item
+Zur stetigen Sub-Verteilungsfunktion $ F_c $ aus Teil (i) gibt es genau zwei weitere Sub-Verteilungsfunktionen $ F_ac $ und $ F_s $ mit $ F_c(x) = F_ac (x) + F_s (x) \ \forall x \in \R$. Dabei ist das zu $ F_ac $ gehörende Maß abs-stetig und das zu $ F_s $ gehörende Maß singulär bzgl dem Lebesgue-Maß.
+\end{enumerate}
+
+\end{karte}
+
+
+\begin{karte}[Stochastik-I]{Zusammenhang von \\ Wahrscheinlichkeit, \\ Maßintegral und \\ Verteilung}[3.1.12]
+
+$ \xi $ ZV über $ (\Omega, \calA, \PP) $, abs-stet Vert $ \PP_\xi $ bzgl L-Maß $ \lambda \ \Longrightarrow $  (Rad-Nik) $ \exists $ Borel-mb Funk $ f: \R \ni x \longrightarrow f(x) \in \R_\geq $ mit \\
+$$
+\PP_\xi(B) = \int_{}^{} I_B (x)f(x)\lambda\t{(d}x\t{)} \ \forall B \in \calB^*
+$$
+$ \int_{}^{} \ ... \ \lambda \t{(d}x\t{)} $ ist Maßintegral bzgl Lebesque-Maß. Ist $ B = \ ]-\infty,y] $ ein Halbstrahl, $ f $ eine mind stückw stet Funk, dg \\
+$$
+\int_{}^{} I_{]-\infty,y]} (x) f(x) \lambda \t{(d}x\t{)} = F_\xi (y) = \int_{-\infty}^{y} f(x) \t{(d}x\t{)}
+$$
+
+\end{karte}
+
+
+\begin{karte}[Stochastik-I]{Hauptsatz \\ Differential- \\ und \\ Integralrechnung}[unter 3.1.12]
+
+$$
+F'_\xi = f(x) \ \forall x \in \R
+$$
+	
+\end{karte}
+
+
+\begin{karte}[Stochastik-I]{Bedingte \\ Wahrscheinlichkeit}[unter 3.2]
+
+W-Raum $ (\Omega, \calA, \PP) $ mit $ A,B \in \calA $, $ \PP(B) > 0 $, dg: \cmone
+$$
+\PP(A|B) = \frac{\PP(A \cap B)}{\PP(B)}
+$$
+\end{karte}
+
+
+\begin{karte}[Stochastik-I]{Bedingte \\ Wahrscheinlichkeit \\ bei \\ Unabhängigkeit }[]	
+
+W-Raum $ (\Omega, \calA, \PP) $ mit $ A,B \in \calA $, $ \PP(B) > 0 $, dg, und zusätzlich $ A $ unabh von $ B $, dg:
+$$
+\PP(A \cap B) = \PP(A) \cdot \PP(B)
+$$
+und damit insgesamt
+$$
+\PP(A) = \frac{\PP(A) \cdot \PP(B)}{\PP(B)} = \frac{\PP(A \cap B)}{\PP(B)} = \PP(A|B) = \PP(A)
+$$
+
+\end{karte}
+
+
+\begin{karte}[Stochastik-I]{stochastische \\ Unabhängigkeit}[3.2.1]	
+
+W-Raum $ (\Omega, \calA, \PP) $, dann sind die Mengensysteme $ (\calC_i)_{i \in I} $, $\calC_i \subset \calA $, $ i \in I $, \textbf{stochastisch unabhängig}, wenn für jede endliche Teilmenge $ \emptyset \neq S \subset I $ gilt:
+$$
+\PP \left( \bcupp{i \in S}{}{C_i} \right) = \prodd{i \in S}{}{\PP(C_i)} \  \forall C_i \in \calC_i, \ i \in S
+$$
+
+\end{karte}
+
+
+\begin{karte}[Stochastik-I]{unabhängige \\ $\sigma$-Algebren}[3.2.2]
+
+W-Raum $ (\Omega, \calA, \PP) $, $ (\calC_i)_{i \in I} $ unabh Mengensysteme, \\
+$ \calC_i \subset \calA $ und $ \cap $-stabil, $ i \in I $, dg: \cmhalf
+$$
+(\sigma(\calC_i))_{i \in I}
+$$ \cmhalf
+unabhängig.
+
+\end{karte}
+
+
+\begin{karte}[Stochastik-I]{Blockungslemma}[3.2.3]	
+
+W-Raum $ (\Omega, \calA, \PP)$, unabh Mengen-Sys $ (\calC_i)_{i \in I} $, $ \calC_i \subset \calA $ und $ \cap $-stabil, $ i \in I $, $ (I_j)_{j \in T} $ pd Teilmengen von $ I $, dg: \cmone
+$$
+(\calC_{I_j})_{j \in T} \t{, mit } \calC_{I_j} := \sigma \left( \bcupp{i \in I_j}{}{\calC_i} \right) \!, \ j \in T
+$$
+
+\end{karte}
+
+
+\begin{karte}[Stochastik-I]{unabhängige \\ Zufallsvariablen}[3.2.4]	
+
+Eine Familie $ (\xi_i)_{i \in I} $ von ZV über W-Raum $ (\Omega, \calA, \PP) $ heißen \textbf{unabhängig} gdw $ (\sigma(\xi_i))_{i \in I} $ unabh Mengen-Sys auf $ \calA $ sind. \\
+Die von $ \xi $ erz $ \sigma $-Algebra auf $ \Omega $ wird bezeichnet mit
+$$
+\sigma(\xi) = \sigma(\xi^{-1}(\calB^*)) \equiv \xi^{-1}(\calB^*)
+$$
+\textit{()Urbilder von $ \sigma $-Algebren sind $ \sigma $-Algebren)}
+
+\end{karte}
+
+
+\begin{karte}[Stochastik-I]{IID}[3.2.5]	
+
+Wiederholt man ein Experiment (ZV!) mehrfach und unabhängig, so sind die $ n  $ ZV $ \xi_1, \xi_2, ... , \xi_n $ stochastisch unabhängig und haben die gleiche Verteilung. Damit sind sie
+\center{IID} \\
+\center{independen and identically distributed}
+
+\end{karte}
+
+
+\begin{karte}[Stochastik-I]{Wahrscheinlichkeit \\ mehrdimensionaler \\ Zufallvektor}[3.2.6]
+
+$ (\xi)_{1 \leq i \leq n}, n \in \N $ seien ZV auf $ (\Omega, \calA, \PP) $, dg bzgl des $ n $-dim Zufallsvektors auf $ (\R^n, \calB_n^*) $ eine Äquivalenz: \\
+$ \xi: (\Omega, \calA, \PP) \ni w \longrightarrow \xi(w) := \left( \xi_1(w), ... \, , \xi_n(w) \right) ' \in (\R^n, \calB_n^*) $
+\begin{enumerate}[label=(\roman*), noitemsep]
+\item
+$ (\xi_i)_{1 \leq i \leq n} $ sind unabhängig 
+\item
+$ \PP_\xi $, die Verteilung von $ \xi $ auf $ (\R^n, \calB_n^*) $ ist identisch mit dem Produktmaß der einz Vert $ \PP_\xi, 1 \leq i \leq n $, dh
+$$
+\left( \R^n, \calB_n^*, \PP_\xi \right) = \left( \R^n, \botimess{i=1}{n}{\calB*}, \botimess{i=1}{n}{\PP_{\xi_i}} \right)
+$$
+\end{enumerate}
+
+\end{karte}
+
+ 
+\begin{karte}[Stochastik-I]{Faltungsformel \\ diskret}[3.2.7-i]
+
+Zwei unabh ZV $ \xi, \eta $ über $ (\Omega, \calA, \PP) $, $ \varphi = \xi + \eta $: \cmhalf \\
+Falls die ZV diskret mit mögl Sprungstellen \\
+$ S_\xi = (a_i)_{i \in \N} \subset \R $ bzw $ S_\eta = (b_i)_{i \in \N} \subset \R $ dann ist auch $ \varphi $ diskret und es gilt $ \forall x \in \R $:
+$$
+\PP(\varphi \leq x) = \summ{i \geq 1}{}{ \PP_\xi({a_i})F_\eta(x-a_i) } = \summ{i \geq 1}{}{ \PP_\eta({b_i})F_\xi(x-b_i) }
+$$
+
+\end{karte}
+
+
+\begin{karte}[Stochastik-I]{Faltungsformel \\ stetig}[3.2.7-ii]
+	
+Zwei unabh ZV $ \xi, \eta $ über $ (\Omega, \calA, \PP) $, $ \varphi = \xi + \eta $: \cmhalf \\
+Falls die ZV abs-stet bzgl des Lebesgue-Maßes mit Dichten \\
+$ f_\xi, f\eta $ dann gilt $ \forall x \in \R $:
+\begin{align*}
+\PP(\varphi \leq x) = \int_{-\infty}^{\infty} f_\xi (y) F\eta (x-y) \lambda(dy) \\ 
+= \int_{-\infty}^{\infty} f_\eta (z) F_\xi (x-z) \lambda(dz)
+\end{align*}
+	
+\end{karte}
+
+
+\begin{karte}[Stochastik-I]{Faltung \\ diskreter \\ Zufallsvariablen \\ diskret}[3.2.8-i]
+
+Zwei unabh ZV $ \xi, \eta $ über $ (\Omega, \calA, \PP) $, $ \varphi = \xi + \eta $: \cmhalf \\
+Falls die ZV diskret mit mögl Sprungst $ S_\xi = (a_i)_{i \in \N} \subset \R $ \\
+bzw $ S_\eta = (b_i)_{i \in \N} \subset \R $ dann ist auch $ \varphi $ diskret mit mögl Sprungstellen $ c_k = a_i + b_j $ und es gilt $ \forall x \in \R $:
+\begin{align*}
+\PP(\varphi \leq x)
+= \summ{i \geq 1}{}{ \PP_\xi(\{a_i\}) \PP_\eta(\{c_k-a_i\})} \\
+= \summ{i \geq 1}{}{ \PP_\eta(\{b_i\}) \PP_\xi(\{c_k-b_j\})}
+\end{align*}
+
+\end{karte}
+
+
+\begin{karte}[Stochastik-I]{Faltung \\ absolut-stetiger \\ Zufallsvariablen \\ absolut-stetig}[3.2.8-ii]
+
+Zwei unabh ZV $ \xi, \eta $ über $ (\Omega, \calA, \PP) $, $ \varphi = \xi + \eta $: \cmhalf \\
+Falls die ZV abs-stet bzgl des Lebesgue-Maßes mit Dichten \\
+$ f_\xi, f\eta $ dann ist auch $ \varphi $ abs-stet bzgl des Lebesgue-Maßes mit Dichte
+$$
+f_\varphi: \R \ni x \longrightarrow f_\varphi (x) := \int_{-\infty}^{\infty} f_\xi (y) f_\eta (x-y) \lambda (dy) \in \R_\geq
+$$
+
+
+\end{karte}
+\begin{karte}[Stochastik-I]{}[]
+\end{karte}
 \end{document}

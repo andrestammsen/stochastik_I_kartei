@@ -1,16 +1,39 @@
+% IRGENDWANN NOCH DIE ÜBERTRIEBENEN NEWCOMMANDS ABBAUEN, ALLES BEI ZcalAmu USW.
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{kartei}[2011/12/31 Karteikarten in LaTeX, Version 1.8b2]
 \newcommand{\setcardpagelayout}{}
 
+% OWN STUFF -------------------------------------------------------------------------------------------------------------
 \let\t\textrm
+
 \newcommand{\cmhalf}{\vspace{0.5 cm}}
 \newcommand{\cmone}{\vspace{1 cm}}
 \newcommand{\cmonehalf}{\vspace{1.5 cm}}
 
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\twopartdef}[4]
+{
+\left\{
+	\begin{array}{ll}
+		#1, & \mbox{} #2 \\
+		#3, & \mbox{} #4
+	\end{array}
+\right.
+}
+\newcommand{\threepartdef}[6]
+{
+\left\{
+\begin{array}{ll}
+	#1, & \mbox{} #2 \\
+	#3, & \mbox{} #4 \\
+	#5, & \mbox{} #6
+\end{array}
+\right.
+}
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\N}{\mathbb{N}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
 
 \newcommand{\calA}{\mathscr{A}}
 \newcommand{\calB}{\mathscr{B}}
@@ -46,10 +69,12 @@
 \newcommand{\otimess}[3]{\otimes_{#1}^{#2}{#3}}
 \newcommand{\btimess}[3]{\bigtimes_{#1}^{#2}{#3}}
 \newcommand{\botimess}[3]{\bigotimes_{#1}^{#2}{#3}}
-\newcommand{\bcupp}[3]{\bigcup_{#1}^{#2}{#3}}
-\newcommand{\bcapp}[3]{\bigcap_{#1}^{#2}{#3}}
+\newcommand{\bcupp}[3]{\bigcup\limits_{#1}^{#2}#3}
+\newcommand{\bcapp}[3]{\bigcap\limits_{#1}^{#2}#3}
 \newcommand{\mae}{\mu-f.s.}
 \newcommand{\mintable}{\mu-\textrm{integrierbar}}
+
+% OWN STUFF END ---------------------------------------------------------------------------------------------------------
 
 \makeatletter
 %
