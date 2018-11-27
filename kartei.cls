@@ -9,7 +9,7 @@
 \newcommand{\cmhalf}{\vspace{0.5 cm}}
 \newcommand{\cmone}{\vspace{1 cm}}
 \newcommand{\cmonehalf}{\vspace{1.5 cm}}
-
+\newcommand{\mmthree}{\vspace{0.3 cm}}
 \newcommand{\twopartdef}[4]
 {
 \left\{
@@ -29,16 +29,24 @@
 \end{array}
 \right.
 }
+
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\PP}{\mathbb{P}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\Z}{\mathbb{Z}}
 
+\newcommand{\eps}{\varepsilon}
+
 \newcommand{\calA}{\mathscr{A}}
 \newcommand{\calB}{\mathscr{B}}
 \newcommand{\calC}{\mathscr{C}}
+\newcommand{\calD}{\mathscr{D}}
+\newcommand{\calG}{\mathscr{G}}
 \newcommand{\calN}{\mathscr{N}}
+\newcommand{\calP}{\mathscr{P}}
+\newcommand{\calR}{\mathscr{R}}
+\newcommand{\calS}{\mathscr{S}}
 \newcommand{\calX}{\mathscr{X}}
 \newcommand{\calY}{\mathscr{Y}}
 \newcommand{\calZ}{\mathscr{Z}}
@@ -73,6 +81,7 @@
 \newcommand{\bcapp}[3]{\bigcap\limits_{#1}^{#2}#3}
 \newcommand{\mae}{\mu-f.s.}
 \newcommand{\mintable}{\mu-\textrm{integrierbar}}
+\newcommand{\comp}[1]{{#1}^\complement}
 
 % OWN STUFF END ---------------------------------------------------------------------------------------------------------
 
