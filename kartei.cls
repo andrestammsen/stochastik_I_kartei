@@ -10,6 +10,7 @@
 \newcommand{\cmone}{\vspace{1 cm}}
 \newcommand{\cmonehalf}{\vspace{1.5 cm}}
 \newcommand{\mmthree}{\vspace{0.3 cm}}
+
 \newcommand{\twopartdef}[4]
 {
 \left\{
@@ -37,6 +38,7 @@
 \newcommand{\Z}{\mathbb{Z}}
 
 \newcommand{\eps}{\varepsilon}
+\newcommand{\dd}{\t{d}}
 
 \newcommand{\calA}{\mathscr{A}}
 \newcommand{\calB}{\mathscr{B}}

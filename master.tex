@@ -1,3 +1,6 @@
+% NOCHMAL ALLES DURCHGEHEN WEGEN FEHLER UND LAYOUT
+% \VSPACE*{... CM} => MACHT IMMERIMMERIMMER DEN VSPACE :):):):):)
+
 \documentclass[a7paper,11pt,print,grid=front]{kartei}
 \usepackage[T1]{fontenc}
 \usepackage{ngerman}
@@ -18,13 +21,13 @@ Ein System von Teilmengen/Ereignissen einer beliebigen, nicht-leeren Menge $ X $
 \item $ X \in \calA $
 \item $ A \in \calA \Longrightarrow \comp{A} \in \calA $
 \item $ A_1, ... , A_n \in \calA \Longrightarrow \cup_{i=1}^{n} A_i \in \calA $ (n $ \geq $ 1 beliebig)
-\item $ A_1, A_2, ...  \in \calA \Longrightarrow \cup_{i=1}^{\infty} A_i \in \calA \ \longrightarrow $ \textbf{$\sigma$-Algebra}
+\item $ A_1, A_2, ...  \in \calA \Longrightarrow \cup_{i=1}^{\infty} A_i \in \calA \ \longrightarrow $ \bm{$\sigma$}\textbf{-Algebra}
 \item $ A_1, A_2, ... p.d.\Longrightarrow \cup_{i=1}^{\infty} A_i \in \calA \ \longrightarrow $ \textbf{Dynkin-System}
 \end{enumerate}
 \end{karte}
 
 \begin{karte}[Stochastik-I]{von $\eps$ erzeugte/ \\ kleinste \\ $\sigma$-Algebra}[2.1.4]
-Seien $X$ bel n-leere Menge, $\eps \subset \calP(X)$ System von TM von $X$, dann ist die kleinste $\sigma$-Algebra bzw die von $\eps$ \textbf{erzeugte $\sigma$-Algebra} ¸ber $X$:
+Seien $X$ bel n-leere Menge, $\eps \subset \calP(X)$ System von TM von $X$, dann ist die kleinste $\sigma$-Algebra bzw die von $\eps$ \textbf{erzeugte} \bm{$\sigma$}\textbf{-Algebra} ¸ber $X$:
 \cmone
 $$\sigma(\eps) = \bcapp{\calA: \ \sigma \t{-Algebra ¸ber } X \t{ mit } \eps \subset \calA}{}{} \calA$$
 \end{karte}
@@ -48,7 +51,7 @@ Metrischer Raum ist bel n-leere Menge $X$ versehen mit Metrik (Abstand) $d$, wob
 \end{karte}
 
 \begin{karte}[Stochastik-I]{$\eps$-Kugel \\ offene Menge \\ Gesamtheit der offenen Mengen}[unter 2.1.6]
-\raggedright{\textbf{$\eps$-Kugel um x}, $x \ni X$ bel, $\eps > 0$: \mmthree \\}
+\raggedright{\bm{$\eps$}\textbf{-Kugel um x}, $x \ni X$ bel, $\eps > 0$: \mmthree \\}
 \centering{$K(x,\eps) := {y \ni X : d(x,y) < \eps}$ \mmthree \\}
 \raggedright{TM $G \subset X$ heiﬂt \textbf{offen} im metr Raum $(X,d)$, wenn gilt: \vspace{0.3 cm} \\}
 \centering$\forall x \ni G \ \exists \eps > 0, \t{ sd } K(x,\eps) \subset G$ \mmthree \\
@@ -79,15 +82,15 @@ Sei $(X, \calA)$ mb Raum. Er ist \textbf{additiv}, wenn }
 $$
 A_1, A_2, ... , A_n \in \calA \ pd \Longrightarrow \mu \left ( \bcupp{i=1}{n}{A_i} \right) = \summ{i=1}{n}{\mu(A_i)}
 $$
-und \textbf{$\sigma$-additiv}, wenn
+und \bm{$\sigma$}\textbf{-additiv}, wenn
 $$
 A_1, A_2, ... \in \calA \ pd \Longrightarrow \mu \left ( \bcupp{i=1}{\infty}{A_i} \right)= \summ{i=1}{\infty}{\mu(A_i)}
 $$
 \end{karte}
 
-\begin{karte}[Stochastik-I]{$sigma$-subadditiv}[zu 2.2.1]
+\begin{karte}[Stochastik-I]{$\sigma$-subadditiv}[zu 2.2.1]
 \raggedright {
-Sei $(X, \calA)$ mb Raum. Er ist \textbf{$\sigma$-subadditiv}, wenn }\cmone
+Sei $(X, \calA)$ mb Raum. Er ist \bm{$\sigma$}\textbf{-subadditiv}, wenn }\cmone
 $$
 A_1, A_2, ... \in \calA \Longrightarrow \mu \left ( \bcupp{i=1}{\infty}{A_i} \right) \leq \summ{i=1}{\infty}{\mu(A_i)}
 $$
@@ -105,7 +108,7 @@ $\mu \ \sigma$-additiv $ \longrightarrow \mu$ ist \textbf{Maﬂ}, $(X, \calA, \mu)
 $\mu(X) < \infty \longrightarrow (X, \calA, \mu)$ ist \textbf{finiter Maﬂraum} \\
 $\mu(X) = 1 \longrightarrow  (X, \calA, \mu)$ ist  \textbf{Wahrsch-Raum}
 \item
-$\exists \, A_1, A_2, ... \in \calA, \mu(A_i) < \infty, \bcupp{i=1}{\infty}{A_i} = X \longrightarrow (X, \calA, \mu) $ ist \textbf{$\sigma$-finiter Maﬂraum}
+$\exists \, A_1, A_2, ... \in \calA, \mu(A_i) < \infty, \bcupp{i=1}{\infty}{A_i} = X \longrightarrow (X, \calA, \mu) $ ist \bm{$\sigma$}\textbf{-finiter Maﬂraum}
 \end{enumerate}
 \end{karte}
 
@@ -167,50 +170,202 @@ $
 \end{karte}
 
 \begin{karte}[Stochastik-I]{$\mu$-fast sicher \\ $\mu$-Nullmenge}[2.2.7]
-Seien $(X, \calA, \mu)$ Maﬂraum, $AUS(x)$ Aussage ¸ber $x \in X$, dann heiﬂt $AUS$ gilt \textbf{$\mu$-fast sicher} bzw. $AUS \, \mu-fs$, wenn:
+Seien $(X, \calA, \mu)$ Maﬂraum, $AUS(x)$ Aussage ¸ber $x \in X$, dann heiﬂt $AUS$ gilt \bm{$\mu$}\textbf{-fast sicher} bzw. $AUS \, \mu-fs$, wenn:
 $$
 \quad \mu \left( \{x \in X: AUS(x) = FALSE \} \right) = 0
 $$
-$A \in \calA \t{ mit } \mu(A) = 0$ bezeichnet man als \textbf{$\mu$-Nullmengen}. Insgesamt gilt also:
+$A \in \calA \t{ mit } \mu(A) = 0$ bezeichnet man als \bm{$\mu$}\textbf{-Nullmengen}. Insgesamt gilt also:
 $$
 AUS \ \mu \t{-fs} \Leftrightarrow \{x \in X: AUS(x) = FALSE\} \  \mu \t{-Nullmenge}
 $$
 \end{karte}
 
 \begin{karte}[Stochastik-I]{Messbarkeit}[2.3.1]
+Seien $(X, \calA)$ und $(Y, \calB)$ mb R‰ume. Eine Abbildung \newline
+$$
+f: X \ni x \longrightarrow f(x) \in Y
+$$
+ist \bm{$\calA - \calB$}\textbf{ messbar} gdw \newline
+$$
+\forall B \in \calB: f^{-1}(b) \in \calA \t{ bzw } f^{-1} \subset \calA
+$$
 \end{karte}
 
-\begin{karte}[Stochastik-I]{}[]
+\begin{karte}[Stochastik-I]{Messbarkeit \\ erleichtert}[2.3.2]
+Sei $f: (X, \calA) \longrightarrow (Y, \calB)$ eine Funktion, $\eps \subset \PP(Y)$ ein Erz-System von $\calB$, dh $\sigma(\eps) = \calB$, dann sind ‰quivalent \newline
+\begin{enumerate}[label=(\roman*)]
+\item $f^{-1}(\eps) \subset \calA$
+\item $f$ ist $\calA-\calB$-messbar
+\end{enumerate}
 \end{karte}
 
-\begin{karte}[Stochastik-I]{}[]
+\begin{karte}[Stochastik-I]{numerische \\ Abbildungen}[2.3.3]
+Eine \textbf{numerische Abbildung} der Form \newline
+$$
+f: (X, \calA) \longrightarrow (\overline{\R}, \calB(\overline{\R}))
+$$
+heiﬂt \textbf{$\calA$ mb}, falls $\calA-\calB(\overline{\R})$ mb oder $\calA-\calB^*$ mb. \newline
+Die Mengen der \bm{$\calA$}\textbf{ mb Abbildungen} schreibt man
+$$
+\overline{Z(X, \calA)} := \{f: (X, \calA) \longrightarrow (\overline{\R}, \calB(\overline{\R})) \ | \ f \t{ ist } \ \calA-\calB^*(\overline{\R}) \ mb \}
+$$
+\textit{n-neg: $\Z_+$; $\overline{Z}$ bedeutet $Z$ incl $\infty$}
 \end{karte}
 
-\begin{karte}[Stochastik-I]{}[]
+\begin{karte}[Stochastik-I]{Halbstrahlen \\ als \\ Erzeuger}[2.3.4]
+F¸r eine Abb $F: (X, \calA) \longrightarrow \overline{\R}$ sind folgende Auss \newline ‰quivalent:
+\begin{enumerate}[label=(\roman*), noitemsep]
+\item $f \in \overline{Z(X, \calA)}$
+\item $\{f \leq r\} \in \calA \ \forall r \in \R$
+\item $\{f < r\} \in \calA \ \forall r \in \R$
+\item $\{f \geq r\} \in \calA \ \forall r \in \R$
+\item $\{f > r\} \in \calA \ \forall r \in \R$
+\end{enumerate}
 \end{karte}
 
-\begin{karte}[Stochastik-I]{}[]
+\begin{karte}[Stochastik-I]{Indikatorfunktion}[2.3.5]
+Die \textbf{Indikatorfunktion} ist auf mb Raum $(X, \calA)$ \newline 
+mit $A \subset X$ definiert als
+$$
+I_A: (X,\calA) \ni x \longrightarrow = I_A(x) \equiv I(x \in A) = \twopartdef{1}{x \in A}{0}{x \in \comp{A}}
+$$
+wobei $I_A \in (R, \calB^*)$, und es sind ‰quivalent
+\begin{enumerate}[label=(\roman*)]
+\item $I_A$ ist $\calA$-mb
+\item $A \in \calA$
+\end{enumerate}
 \end{karte}
 
-\begin{karte}[Stochastik-I]{}[]
+\begin{karte}[Stochastik-I]{Komposition/ \\ Hintereinanderschaltung \\ messbarer \\ Funktionen}[2.3.6]
+Geg seien die mb Funktionen
+$$
+f: (X, \calA) \longrightarrow (Y, \calB), \ g: (Y, \calB) \longrightarrow (Z, \calC)
+$$
+Die Komposition/Hintereinanderschaltung ist auch wieder mb:
+$$
+h = g \circ f \t{ ist }\calA-\calC \t{ mb}
+$$
+\textit{f ist innere Funktion / wird zuerst ausgef¸hrt}
 \end{karte}
 
-\begin{karte}[Stochastik-I]{}[]
+\begin{karte}[Stochastik-I]{Messbarkeit \\ endlicher \\ Summen und \\ Produkte}[2.3.6]
+Sei der gemeinsame Raum $(X, \calA)$ mb, dg f¸r Funktionen ¸ber diesem Raum: \cmhalf \\
+Endliche Summen und Produkte numerischer Funktionen sind wieder Borel-mb (falls definiert). \cmhalf \\
+\cmhalf
+Mit $f \in \overline{Z(X, \calA)}$ gilt: \\
+$1/f \in \overline{Z(X, \calA)}$ (falls definiert).
 \end{karte}
 
-\begin{karte}[Stochastik-I]{}[]
+\begin{karte}[Stochastik-I]{Suprema / Infima \\ Limites superior/inferior \\ $\calA$-messbarer \\ Abbildungen}[2.3.8]
+Sei $(f_n)_{n \in \N}$ bel Folge von Fnkt aus $\overline{Z(X, \calA)}$, dann sind ebenfalls wieder aus $\overline{Z(X, \calA)}$:
+\vspace*{0.3 cm}
+\begin{enumerate}[label=(\roman*), nosep]
+\item inf $f_n$; $\forall x \in X:$ inf $f_n(x) := $ inf $\{f_n(x): n \in \N\}$
+\item sup $f_n$; $\forall x \in X:$ usp $f_n(x) := $ sup $\{f_n(x): n \in \N\}$
+\item lim inf $f_n$; $\forall x \in X:$ lim inf $f_n(x) \\ := $ lim inf $\{f_n(x): n \in \N\}$
+\item lim sup $f_n$; $\forall x \in X:$ lim sup $f_n(x) \\ := $ lim sup $\{f_n(x): n \in \N\}$
+\end{enumerate}
 \end{karte}
 
-\begin{karte}[Stochastik-I]{}[]
+\begin{karte}[Stochastik-I]{Bildmaﬂ}[2.3.9]
+Sei $f: (X, \calA, \mu) \longrightarrow (Y, \calB)$ eine $\calA - \calB$ mb Abb, \newline
+dann wird durch $f$ und das Maﬂ $\mu$ der mb Raum $(Y, \calB)$ auch zu einem Maﬂraum $(Y, \calB, \mu_f)$ mittels
+$$
+\mu_f: \calB \ni B \longrightarrow \mu_f(B) := \mu(f^{-1}(B)) \in [0,\infty]
+$$
+$\mu_f$ ist das \textbf{Bildmaﬂ} von $\mu$ unter $f$.
 \end{karte}
 
-\begin{karte}[Stochastik-I]{}[]
+\begin{karte}[Stochastik-I]{Maﬂintegral \\ Schreibweisen}[unter 2.4]
+Folgende Schreibweisen sind f¸r das Maﬂintegral gebr‰uchlich:
+$$
+\mu(f) \equiv \int_{}^{}f \, \t{d}\mu \equiv \int_{}^{} f(x)\mu(\t{d}x) \equiv \int_{X}{} f \, \t{d}\mu \equiv \int_{y}{} f(x) \mu(\t{d}x) 
+$$
+Bezogen auf eine Menge $A \in \calA$ schreibt man:
+$$
+\int_{A}{} f(x)\mu(\t{d}x) \equiv \int_{A}{} f \, \t{d}\mu \equiv \mu(f;A) \equiv \mu(f \cdot I_A) \equiv \int_{X}{} f \, I_A \, \t{d}\mu
+$$
 \end{karte}
 
-\begin{karte}[Stochastik-I]{}[]
+\begin{karte}[Stochastik-I]{Maﬂintegral \\ der \\ Indikatorfunktion}[unter 2.4.1]
+Mit $f = I_A, \ A \in \calA$ ist dann $f \in Z_+(X,\calA)$, und man definiert das \textbf{Maﬂintegral der Indikatorfunktion $\bm{I_A}$ } durch \cmonehalf \\
+$$
+\mu(I_A) = \int_{}{} I_A \ \t{d}\mu := \mu(A)
+$$
 \end{karte}
 
-\begin{karte}[Stochastik-I]{}[]
+\begin{karte}[Stochastik-I]{nicht-negative \\ Elementarfunktionen}[2.4.1]
+Die Menge der \textbf{nicht-negativen Elemtarfunktionen} zum mb Raum $(X, \calA)$ wird definiert durch \cmonehalf \\
+$$
+E_+(X, \calA) := \{f \in Z_+(X, \calA): f(X) \ \t{ist eine endl Menge}\}
+$$
+\end{karte}
+
+\begin{karte}[Stochastik-I]{Summenschreibweise \\ Elementarfunktion}[2.4.2]
+Sei $f \in E_+(X, \calA)$, dann gibt es $A_1, A_2, ... , A_n \in \calA \t{ und } \\ \alpha_1, \alpha_2, ... , \alpha_n \in R_\geq$ mit \cmonehalf \\
+$$
+f(x) = \summ{i=1}{n}{\alpha_i \, I_{A_i}(x)}, \ \forall x \in X
+$$
+\end{karte}
+
+\begin{karte}[Stochastik-I]{Maﬂintegral \\ nicht-negative \ Elementarfunktion}[2.4.3]
+Sei $f \in E_+(X, \calA)$ mit der Darstellung
+$$
+f(x) = \summ{i=1}{n}{\alpha_i \, I_{A_i}(x)}, \ \forall x \in X
+$$
+dann wird das \textbf{Maﬂintegral einer nicht-negativen \\ Elementarfunktion} definiert durch
+$$
+\mu(f) \equiv \mu \left( \summ{i=1}{n}{\alpha_i \, I_{A_i}} \right) \equiv \int_{}^{} f \, \dd\mu := \summ{i=1}{n}{\alpha_i \, \mu(A_I)}
+$$
+\textit{(Dabei ist die Wahl der Summendarstellung irrelevant}
+\end{karte}
+
+\begin{karte}[Stochastik-I]{Approximationssatz}[2.4.5]
+\vspace*{1.5 cm}
+%\cmonehalf . \\ \cmhalf . \\
+% WIE MACHE ICH DEN ABSTAND DIREKT AM ANFANG DER FLASHCARD?
+Sei $f \in \overline{Z_+(X, \calA)}$, dann gibt es eine mon wachs Folge $(f_n)_{n \in \N} \subset E_+(X, \calA) \t{ mit } lim_{n \to \infty} f_n(x) = f(x) \ \forall x \in X$. Dabei ist die Konvergenz goeichm auf $X$, falls $f$ beschr ist.
+\end{karte}
+
+\begin{karte}[Stochastik-I]{Maﬂintegral \\ nicht-negativer \\ messbarer \\ Funktionen}[2.4.6]
+Sei $f \in \overline{Z_+(X, \calA)} \t{und} (f_n)_{n \in \N} \subset E_+(X, \calA)$ eine gem‰ﬂ Approximationssatz zu $f$ gew‰hlte Folge n-neg Elementarfunktionen, dann wird das \textbf{Maﬂintegral einer nicht-negativen messbaren Funktion} definiert durch
+$$
+\mu(f) \equiv \int_{}^{} f\, \dd\mu := \sup_{n \in \N} \int_{}^{} f_n \, \dd\mu \equiv \sup_{n \in \N} \mu(f_n)
+$$
+\end{karte}
+
+\begin{karte}[Stochastik-I]{Positivteil \& Negativteil \\ von \\ Funktionen}[2.4.8]
+Sei $f \in \overline{Z(X,\calA}$ bel, dann werden der \textbf{Positivteil} \newline
+und \textbf{Negativteil} von $f$ als zwei neue Funktionen aus \newline
+$\overline{Z_+(X,calA)}$ definiert durch \cmhalf \\
+$$
+f^+(x) := max\{f(x),0\}, \ f^-(x) := max\{-f(x),0\}, \ x \in X
+$$
+\end{karte}
+
+\begin{karte}[Stochastik-I]{Maﬂintegral \\ von $f$ bzgl $\mu$ \\ oder \\ $\mu$-Integral von f}[2.4.9]
+$f \in \overline{Z(X,\calA)}$ bel, $f^+ / f^-$ Positiv-/Negativteil von $f$:
+\begin{enumerate}[label=(\roman*), noitemsep] 
+\item Mind $\mu(f^+) \t{ oder } \mu(f^-)$ endl, dann ist das 
+\textbf{Maﬂintegral von $\bm{f}$ bzgl $\bm{\mu}$} bzw \textbf{$\bm{\mu}$-Integral von $\bm{f}$}:
+$$
+\mu(f) \equiv \int_{}^{}f \dd\mu := \int_{}^{} f^+ \dd\mu - \int_{}^{} f^- \dd\mu \equiv \mu(f^+) - \mu(f^-)
+$$
+\item Integral exist: $f$ heiﬂt \textbf{$\bm{\mu}$-quasiintegrierbar}
+\item Integral exist und endl: $f$ ist \textbf{$\mu$-integrierbar}
+\item $\mu(f^+) = \infty \t{ und } \mu(f^-) = \infty \t{: } \mu(f)$ nicht definiert
+\end{enumerate}
+\end{karte}
+
+\begin{karte}[Stochastik-I]{Gesamtheit \\ $\mu$-integrierbarer \\ Funktionen}[2.4.10]
+$f \in \overline{Z(X,\calA)} $ ist $\mu$-integrierbar gdw $|f|$ ist $\mu$-integrierbar. Die Gesamtheit aller $\mu$-integrierbaren Funktionen wird daher im Folgenden bezeichnet mit
+$$
+\overline{L^1(X,\calA,\mu)} := \{ f \in \overline{Z(X,\calA)}: \mu(|f|) < \infty \}
+$$
+bzw
+$$
+L^1(X,\calA,\mu) := \{ f \in Z(X,\calA) : \mu(|f|) < \infty \}
+$$
 \end{karte}
 
 \begin{karte}[Stochastik-I]{Eigenschaften des Maﬂintegrals}[2.4.4]
@@ -399,7 +554,7 @@ $ (X_i, \calA_i, \mu_i) $ 2 $ \sigma $-finite Maﬂr‰ume, $ (X, \calA, \pi) $ der 
 }
 \end{karte}
 
-\begin{karte}[Stochastik-I]{Experiment/\\Zufallsvektor/\\Zufallsvariable/\\Verteilung}[]
+\begin{karte}[Stochastik-I]{Experiment/ \\ Zufallsvektor/  \\ Zufallsvariable/ \\ Verteilung}[unter 3.1]
 \begin{enumerate}[label=(\roman*), noitemsep]
 \item 
 Im W-Raum $ (\Omega, \calA, \PP) $ ist ein \textbf{Experiment} oder ein $ k $-dim \textbf{Zufallsvektor} $ \xi = (\xi_1, \xi_2, ... , \xi_k) $ eine $ \calA - \calB_k^* $ mb Abb, im Spezialfall $ k = 1 $ eine 
@@ -605,6 +760,39 @@ f_\varphi: \R \ni x \longrightarrow f_\varphi (x) := \int_{-\infty}^{\infty} f_\
 $$
 \end{karte}
 
+\begin{karte}[Stochastik-I]{}[]
+\end{karte}
+
+\begin{karte}[Stochastik-I]{}[]
+\end{karte}
+\begin{karte}[Stochastik-I]{}[]
+\end{karte}
+\begin{karte}[Stochastik-I]{}[]
+\end{karte}
+\begin{karte}[Stochastik-I]{}[]
+\end{karte}
+\begin{karte}[Stochastik-I]{}[]
+\end{karte}
+\begin{karte}[Stochastik-I]{}[]
+\end{karte}
+\begin{karte}[Stochastik-I]{}[]
+\end{karte}
+\begin{karte}[Stochastik-I]{}[]
+\end{karte}
+\begin{karte}[Stochastik-I]{}[]
+\end{karte}
+\begin{karte}[Stochastik-I]{}[]
+\end{karte}
+\begin{karte}[Stochastik-I]{}[]
+\end{karte}
+\begin{karte}[Stochastik-I]{}[]
+\end{karte}
+\begin{karte}[Stochastik-I]{}[]
+\end{karte}
+\begin{karte}[Stochastik-I]{}[]
+\end{karte}
+\begin{karte}[Stochastik-I]{}[]
+\end{karte}
 \begin{karte}[Stochastik-I]{}[]
 \end{karte}
 \end{document}
