@@ -760,13 +760,32 @@ f_\varphi: \R \ni x \longrightarrow f_\varphi (x) := \int_{-\infty}^{\infty} f_\
 $$
 \end{karte}
 
-\begin{karte}[Stochastik-I]{Bernoulli- \\ Verteilung}[3.3.1]
-
+\begin{karte}[Stochastik-I]{Bernoulli- \\ verteilung}[3.3.1]
+\vspace*{1 cm}
+Eine ZV besitzt eine \textbf{Bernoulli-Verteilung} zum \newline
+Erfolgsparameter $0\leq p \leq 1$, kurz $\xi \sim BERN(p)$, \newline
+wenn $S = \{0,1\}$ und $\PP_\xi(\{1\}) = p$
+\vspace*{0.3 cm} \\
 \end{karte}
 
-\begin{karte}[Stochastik-I]{}[]
+\begin{karte}[Stochastik-I]{Binomial- \\ verteilung}[3.3.1]
+Eine ZV $\xi$ besitzt eine \textbf{Binomial-Verteilung} zu \newline
+den Parametern $n,p$ mit $n \in \N$ und $0 < p < 1$, \newline
+kurz $\xi \sim BINOM(n,p)$, wenn $S = {0,1,...,n}$, $\xi = \sum_{i=1}^{n} \eta_i$: \cmhalf \\
+$$
+\PP_\xi(\{k\}) = \binom{n}{k}p^k(1 - p)^{n-k} \quad \forall k \in S
+$$ \cmhalf \\
+\textit{Die binomialverteilte ZV entsteht also als Summe IID. Bernoulli Variablen}
 \end{karte}
-\begin{karte}[Stochastik-I]{}[]
+
+\begin{karte}[Stochastik-I]{Grenzwertsatz \\ von \\ Poisson}[3.3.3]
+Sei $(\xi_n)_{n \in \N}$ eine Folge von binomial-verteilten ZV über $(\Omega, \calA, \PP)$ mit $\xi_n \sim BINOM(n,p_n)$ für $n \in \N$ und $n \, p_n = \lambda > 0 \ \forall n \in \N$, dg:
+\vspace*{0.3 cm} \\
+$$
+\lim_{n \to \infty} \PP(\xi_n = k) = e^{-\lambda} \left( \frac{\lambda^k}{k!} \right) \quad \forall k \geq 0
+$$
+\vspace*{0.3 cm} \\
+\textit{(Beispielsweise radioaktiver Zerfall; extrem große Menge an Experimenten benötigt.)}
 \end{karte}
 \begin{karte}[Stochastik-I]{}[]
 \end{karte}
