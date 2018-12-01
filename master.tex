@@ -562,7 +562,7 @@ Im W-Raum $ (\Omega, \calA, \PP) $ ist ein \textbf{Experiment} oder ein $ k $-di
 \textbf{Zufallsvariable}:
 $ \xi: \Omega, \calA, \PP) \ni \omega \longrightarrow \xi(\omega) \in (\R_k, \calB_k^*) $
 \vspace{0.3 cm} 
-\item Ist $ \xi $ ein $ k $-dim Zufallsvektor, dann wird das Bildmaß $ (\R^k, \calB_k^*, \PP_\xi) $ (die \textbf{Verteilung} von $ \xi $ unter $ \PP $) definiert
+\item Ist $ \xi $ ein $ k $-dim ZV, dann wird das Bildmaß $ (\R^k, \calB_k^*, \PP_\xi) $ (die \textbf{Verteilung} von $ \xi $ unter $ \PP $) definiert
 $$
 \PP_\xi: \calB_k^* \ni \calB \longrightarrow \PP_\xi(B) := \PP(\xi^{-1}(B))
 $$
@@ -570,7 +570,7 @@ $$
 \end{karte}
 
 \begin{karte}[Stochastik-I]{Verteilungsfunktion}[3.1.2]
-Sei $ \xi $ ein $ k $-dimensionaler Zufallsvektor auf W-Raum \\\
+Sei $ \xi $ ein $ k $-dimensionaler ZV auf W-Raum \\\
 $ (\Omega, \calA, \PP) $, dann wird die \textbf{Verteilungsfunktion} von $ \xi $, die die Verteilung $ \PP_\xi $ eindeutig festlegt, definiert durch
 $$
 F_\xi: \R^k \ni x \longrightarrow F_xi(x) := \PP(\xi \leq x) \in [0,1]
@@ -708,7 +708,7 @@ Wiederholt man ein Experiment (ZV!) mehrfach und unabhängig, so sind die $ n  $ 
 \end{karte}
 
 \begin{karte}[Stochastik-I]{Wahrscheinlichkeit \\ mehrdimensionaler \\ Zufallvektor}[3.2.6]
-$ (\xi)_{1 \leq i \leq n}, n \in \N $ seien ZV auf $ (\Omega, \calA, \PP) $, dg bzgl des $ n $-dim Zufallsvektors auf $ (\R^n, \calB_n^*) $ eine Äquivalenz: \\
+$ (\xi)_{1 \leq i \leq n}, n \in \N $ seien ZV auf $ (\Omega, \calA, \PP) $, dg bzgl des $ n $-dim ZV auf $ (\R^n, \calB_n^*) $ eine Äquivalenz: \\
 $ \xi: (\Omega, \calA, \PP) \ni w \longrightarrow \xi(w) := \left( \xi_1(w), ... \, , \xi_n(w) \right) ' \in (\R^n, \calB_n^*) $
 \begin{enumerate}[label=(\roman*), noitemsep]
 \item
@@ -760,7 +760,7 @@ f_\varphi: \R \ni x \longrightarrow f_\varphi (x) := \int_{-\infty}^{\infty} f_\
 $$
 \end{karte}
 
-\begin{karte}[Stochastik-I]{Bernoulli- \\ verteilung}[3.3.1]
+\begin{karte}[Stochastik-I]{Bernoulli- \\ Verteilung}[3.3.1]
 \vspace*{1 cm}
 Eine ZV besitzt eine \textbf{Bernoulli-Verteilung} zum \newline
 Erfolgsparameter $0\leq p \leq 1$, kurz $\xi \sim BERN(p)$, \newline
@@ -768,7 +768,7 @@ wenn $S = \{0,1\}$ und $\PP_\xi(\{1\}) = p$
 \vspace*{0.3 cm} \\
 \end{karte}
 
-\begin{karte}[Stochastik-I]{Binomial- \\ verteilung}[3.3.1]
+\begin{karte}[Stochastik-I]{Binomial- \\ Verteilung}[3.3.1]
 Eine ZV $\xi$ besitzt eine \textbf{Binomial-Verteilung} zu \newline
 den Parametern $n,p$ mit $n \in \N$ und $0 < p < 1$, \newline
 kurz $\xi \sim BINOM(n,p)$, wenn $S = {0,1,...,n}$, $\xi = \sum_{i=1}^{n} \eta_i$: \cmhalf \\
@@ -787,32 +787,117 @@ $$
 \vspace*{0.3 cm} \\
 \textit{(Beispielsweise radioaktiver Zerfall; extrem große Menge an Experimenten benötigt.)}
 \end{karte}
+
+\begin{karte}[Stochastik-I]{Poisson- \\ Verteilung}[3.3.4]
+Eine ZV $\xi$ besitzt eine \textbf{Poisson-Verteilung } zum \newline
+Parameter $\lambda > 0$, kurz $\xi \sim POIS(\lambda)$, wenn $S = \N_0$ und \mmthree \newline
+$$
+\PP_\xi (\{k\}) = \frac{\lambda^k}{k!} \, e^{(-\lambda)}
+$$ \mmthree \newline
+\textit{(Große Population/seltenes Merkmal: zugrunde liegende Binomial-Vert durch Poisson-Vert ersetzen mit $\lambda = np$, n = Populationsgröße, $p$ = W., dass Individuum Merkmal trägt; z.B. Fälle seltener Krankheit in großer Stadt/Jahr.)}
+\end{karte}
+
+\begin{karte}[Stochastik-I]{Multinomial- \\ Koeffizient}[3.3.3]
+Für $k_1, ... , k_m$ mit $\sum_{i=1}^{m} k_i = n$ definiert durch
+$$
+\binom{n}{k_1,k_2,...,k_m} := \frac{n!}{k_1! \cdot k_2! \cdot \cdot \cdot k_m!}
+$$
+$$
+\varphi := \left( \summ{i=1}{n}{I(\eta_i = 1)}, \, \summ{i=1}{n}{I(\eta_i = 1)}, ... \, , \, \summ{i=1}{n}{I(\eta_i = 1)} \right) ^T
+$$
+$$
+\PP(\varphi = (k_1,k_2, ... \, k_m)^T) = \binom{n}{k_1,k_2, ... \, k_m} p_1^{k_1} \cdot p_2^{k_2} \cdot \cdot \cdot p_m^{k_m} 
+$$
+\end{karte}
+
+\begin{karte}[Stochastik-I]{Multinomial- \\ Verteilung}[3.3.6]
+Bei einer \textbf{Multinomial-Verteilung} $\varphi$ zu Parametern $(n,p_1,p_2, ... \, p_m)$, kurz $\varphi \sim MULTINOM(n,p_1,p_2, ... \, p_m)$ kann der zugehörige diskrete ZV nur folgende Werte annehmen
+$$
+S = \{ (k_1,k_2, ... \, k_m)^T: \summ{i=1}{m}{k_i = n}, \, k_i \in \N_0, \, 1 \leq i \leq m \}
+$$
+\textit{(Dies ist eine Verallgemeinerung der Binomial-Verteilung, bei der die $n$ Objekte nicht auf zwei, sonderm auf $m$ Gruppen verteilt werden.)}
+\end{karte}
+
+\begin{karte}[Stochastik-I]{Geometrische \\ Verteilung}[3.3.7]
+ZV $\xi$ hat \textbf{geometrische Verteilung} zum Parameter $ 0 < p < 1$, kurz $\xi \sim GEOM(p)$, falls $S = N_0$ und $ \forall k \in S$:
+$$
+\PP_\xi(\{k\}) = (1 - p)^k p
+$$
+\textit{(z.B. Wartezeit eines (nicht lernenden) Schützen bis zum ersten Treffer ($\xi = k$: der Schütze trifft beim Schuss $k + 1$)}
+\end{karte}
+
+\begin{karte}[Stochastik-I]{Hypergeometrische \\ Verteilung}[3.3.8]
+ZV $\xi$ hat \textbf{Hypergeometrische Verteilung} zum  \newline
+Parameter $(n,r,s)$ mit $n,r,s \in \N$ un $n \leq r$, \newline
+kurz $\xi \sim HYPER(n,r,s)$, falls $S = {0,1, ... \, n}$ und $\forall k \in S$:
+$$
+\PP_\xi(\{k\}) = \frac{\binom{r}{k} \binom{s}{n-k}}{\binom{r+s}{n}}
+$$
+\textit{(Urne mit $r$ roten und $s$ schwarzen Kugeln, dann gibt die ZV $\xi \sim HYPER(n,r,s)$ die Anzahl gezogener roter \newline
+Kugeln beim $n$-maligen Ziehen ohne Zurücklegen an.)}
+\end{karte}
+
+\begin{karte}[Stochastik-I]{Jacobi- \\ Matrix}[3.3.9]
+$T: \R^n \ni x \longrightarrow T(x) \in \R^n$ diff-bare Abb mit stet Abl gdw $\forall T_i: T_i$ ist partiell stet diff-bar mit \newline
+$D_j T_i(x) = \frac{\partial T_i (x)}{\partial x_j}, \, 1 \leq i \leq n$,
+dann ist $T'(x)$ die \textbf{Jacobi-Matrix} von $T$ an der Stelle $x$, dh
+\mmthree
+$$
+T'(x) := 
+\left( \begin{matrix}
+D_1 T_1 (x) & D_2 T_1 (x) & \dots & D_1 T_n (x) \\
+D_1 T_2 (x) & D_2 T_2 (x) & \dots & D_2 T_n (x) \\
+\vdots      & \vdots      & \vdots & \vdots      \\
+D_1 T_n (x) & D_2 T_n (x) & \dots & D_n T_n (x) \\
+\end{matrix} \right )
+$$
+\end{karte}
+
+\begin{karte}[Stochastik-I]{Transformations- \\ Formel}[3.3.10]
+Sei $T: (\R^n, \calB_n^*, \lambda^n) \ni x \longrightarrow T(x) \in (\R^n, \calB_n^*)$ Transf:
+\begin{enumerate}[label=(\roman*), noitemsep]
+\item $T(x)$ hat stet part Abl an jeder Stelle $x \in \R^n$
+\item $T$ ist bij, $T^{-1}$ hat stet part Abl an jeder Stelle $y \in \R^n$
+\end{enumerate}
+Dann hat das Bildmaß von $\lambda^n$ unter $T$, dh \mmthree \newline
+$\lambda_T^n \equiv (\lambda^n)_T: \calB_n^* \ni B \longrightarrow \lambda_t^n(B): \lambda^n(T^{-1}(B)) \in \R_\geq$  \mmthree \newline
+eine Radon-Nikodym Dichte $f$ bzgl $\lambda^n$, dh d$\lambda_T^n = f$ d$\lambda^n$:  \mmthree \newline
+$f(y) = | \, det((T^{-1}) ' (y))|$
+\end{karte}
+
+\begin{karte}[Stochastik-I]{Transformations- \\ Formel \\ für \\ Unterräume ???!!!}[3.3.11]
+Transf-Formel gilt auch für Abb vom Typ
+$$
+T : (G, G \cap \calB_n^*, \lambda^n) \ni x \longrightarrow T(x) \in (T(G), T(G) \cap \calB_n^*)
+$$
+wenn $T$ gemäß Transf-Formel und $G \subset \R^n$ ist off Menge, \newline
+und dann ist die \textbf{Spur-}$\bm{\sigma}$\textbf{-Algebra} der Borel-Mengen des $\R^n$ auf $G$: \mmthree \newline
+$$
+G \cap \calB_n^* := \{ G \cap B : B \in \calB_n^*\}
+$$
+\end{karte}
+
+\begin{karte}[Stochastik-I]{neuer \\ Zufallsvektor \\ mit eigener \\ Lebesque-Dichte}[3.3.12]
+Sei $\xi$ ein ZV in $(\R^n, \calB_n^*)$ über $(\Omega,\calA,\PP)$ mit Vert $\PP_\xi$ die abs-stet- bzgl des Lebesque-Maßes $\mu^n$ ist, die Dichte sei gegeben durch $f_\xi \equiv f : \R^n \ni x \longrightarrow f(x) \in \R_\geq$, $T : \R^n \longrightarrow \R^n$ sei eine Abb nach der Transformationsformel, dann wird wieder ein ZV definiert durch \mmthree \newline
+$\eta : (\Omega,\calA,\PP) \ni w \longrightarrow \eta(w) := T(\xi(w)) \in (\R^n,\calB_n^*)$ \mmthree \newline
+mit der Lebesque-Dichte \mmthree \newline
+$g_\eta \equiv g :  \R^n \ni y \rightarrow g(y) := f(T^{-1}(y))| det((T^{-1}) (y)) | \in \R_\geq$
+
+\end{karte}
+
 \begin{karte}[Stochastik-I]{}[]
 \end{karte}
+
 \begin{karte}[Stochastik-I]{}[]
 \end{karte}
+
 \begin{karte}[Stochastik-I]{}[]
 \end{karte}
+
 \begin{karte}[Stochastik-I]{}[]
 \end{karte}
+
 \begin{karte}[Stochastik-I]{}[]
 \end{karte}
-\begin{karte}[Stochastik-I]{}[]
-\end{karte}
-\begin{karte}[Stochastik-I]{}[]
-\end{karte}
-\begin{karte}[Stochastik-I]{}[]
-\end{karte}
-\begin{karte}[Stochastik-I]{}[]
-\end{karte}
-\begin{karte}[Stochastik-I]{}[]
-\end{karte}
-\begin{karte}[Stochastik-I]{}[]
-\end{karte}
-\begin{karte}[Stochastik-I]{}[]
-\end{karte}
-\begin{karte}[Stochastik-I]{}[]
-\end{karte}
-\begin{karte}[Stochastik-I]{}[]
-\end{karte}
+
 \end{document}

@@ -6,10 +6,10 @@
 % OWN STUFF -------------------------------------------------------------------------------------------------------------
 \let\t\textrm
 
-\newcommand{\cmhalf}{\vspace{0.5 cm}}
-\newcommand{\cmone}{\vspace{1 cm}}
-\newcommand{\cmonehalf}{\vspace{1.5 cm}}
-\newcommand{\mmthree}{\vspace{0.3 cm}}
+\newcommand{\mmthree}{\vspace*{0.3 cm}}
+\newcommand{\cmhalf}{\vspace*{0.5 cm}}
+\newcommand{\cmone}{\vspace*{1 cm}}
+\newcommand{\cmonehalf}{\vspace*{1.5 cm}}
 
 \newcommand{\twopartdef}[4]
 {
