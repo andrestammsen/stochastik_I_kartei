@@ -6,6 +6,7 @@
 % OWN STUFF -------------------------------------------------------------------------------------------------------------
 \let\t\textrm
 
+\newcommand{\mmone}{\vspace*{0.1 cm}}
 \newcommand{\mmthree}{\vspace*{0.3 cm}}
 \newcommand{\cmhalf}{\vspace*{0.5 cm}}
 \newcommand{\cmone}{\vspace*{1 cm}}
@@ -32,6 +33,7 @@
 }
 
 \newcommand{\C}{\mathbb{C}}
+\newcommand{\E}{\mathbb{E}}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\PP}{\mathbb{P}}
 \newcommand{\R}{\mathbb{R}}
@@ -39,6 +41,7 @@
 
 \newcommand{\eps}{\varepsilon}
 \newcommand{\dd}{\t{d}}
+\newcommand{\tb}[1]{\textbf{#1}}
 
 \newcommand{\calA}{\mathscr{A}}
 \newcommand{\calB}{\mathscr{B}}

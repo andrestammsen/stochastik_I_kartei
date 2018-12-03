@@ -1,6 +1,7 @@
 % NOCHMAL ALLES DURCHGEHEN WEGEN FEHLER UND LAYOUT
 % \VSPACE*{... CM} => MACHT IMMERIMMERIMMER DEN VSPACE :):):):):)
-
+% PROBLEM: kleine griechische Buchstaben nicht fett mit \bm-Befehl
+% PROBLEM: z.B. 3.6.4: dicke Buchstaben sollen "normal" ohne Mathe-Modus sein, aber mit dem Mal-Zeichen passt das nicht so ganz von alleine, muss irgendwie mit \, oder so getäuscht werden, habe jetzt die "krummen" Mathe-Symbol-Buchstaben genommen :()
 \documentclass[a7paper,11pt,print,grid=front]{kartei}
 \usepackage[T1]{fontenc}
 \usepackage{ngerman}
@@ -885,19 +886,62 @@ $g_\eta \equiv g :  \R^n \ni y \rightarrow g(y) := f(T^{-1}(y))| det((T^{-1}) (y
 
 \end{karte}
 
-\begin{karte}[Stochastik-I]{}[]
+\begin{karte}[Stochastik-I]{Erwartungswert \\ Vektor und \\ Matrix}[unter 3.6.1]
+\begin{spreadlines}{10 pt}
+Zufallsvektor, Vert-Fkt und Erw-Wert Zufallsvektor \newline
+komp-weise sowie Ert-Wert Matrix:
+\begin{gather*}
+\xi: (\Omega,\calA,\PP) \ni \omega \rightarrow \xi(\omega) := \left( \xi_1 (\omega), ... \, , \xi_n (\omega) \right)' \in (\R^n,\calB_n*) \\
+F_\xi \equiv F : R^n \ni x \longrightarrow F(x) := \PP(\xi \leq x) \in [0,1] \\
+\E(\xi) := \left( \E(\xi_1, ... \, , \E(\xi_n) \right)' \\
+\E(\xi) := \left( \E(\xi_{i,j}) \right)_{1 \leq i \leq n,1 \leq j \leq m} 
+\end{gather*}
+\end{spreadlines}
 \end{karte}
 
-\begin{karte}[Stochastik-I]{}[]
+
+\begin{karte}[Stochastik-I]{Kovarianz \\ und \\ Varianz-Kovarianz}[3.6.1]
+Seien $\xi = (\xi_1, ... \, , \xi_n)',$ und $\eta = (\eta_1, ... \, , \eta_m)'$ ZV mit Erw-Werten $\mu = (\mu_1, ... \, , \mu_n)$ und $\nu = (\nu_1, ... \, , \nu_n)$, und $\forall 1 \leq i\leq n, \, \forall 1 \leq m \leq m: \E(|\xi_i\eta_j|) < \infty$, dg (Kov-Matrix):
+\setlength\abovedisplayskip{0 pt}
+\begin{spreadlines}{5 pt}
+\begin{gather*}
+Cov(\xi,\eta) = \bm{C} := (c_{i,j})_{1 \leq i \leq n, 1 \leq j \leq m} \\
+\left( \begin{matrix}
+\E((\xi_1 - \mu_1)(\eta_1 - \nu_1)) & \dots &  \E((\xi_1 - \mu_1)(\eta_m - \nu_m))\\
+\vdots      & \vdots      & \vdots      \\
+\E((\xi_n - \mu_n)(\eta_1 - \nu_1)) & \dots &  \E((\xi_n - \mu_n)(\eta_m - \nu_m))\\
+\end{matrix} \right ) \\
+\t{mit } c_{i,j} := \E((\xi_i - \mu_i)(\eta_j - \nu_j)) = \E(\xi_i, \eta_j) - \mu_i\nu_j
+\end{gather*}
+\end{spreadlines}
 \end{karte}
 
-\begin{karte}[Stochastik-I]{}[]
+\begin{karte}[Stochastik-I]{Rechenregeln \\ Erwartungswert \\ und \\ Varianz-Kovarianz}[3.6.2]
+Seien \textbf{A, B, C} Matrizen mit Dim $l \times n, m \times p, l \times p$, \newline
+$\xi = (\xi_i)_{1 \leq i \leq n}, \, \eta = (\eta_i)_{1 \leq i \leq p} $ Zufallsvektoren und \newline
+$ \bm{\vartheta} = (\vartheta_{i,j})_{1 \leq i \leq n, \, 1 \leq j \leq m}$ eine zufällige Matrix, dg:
+\begin{enumerate}[label=(\roman*)]
+\item $ \E(\bm{A \cdot \vartheta \cdot B + C}) = \bm{A} \cdot \E(\bm{\vartheta}) \cdot \bm{B} + \bm{C} $
+\item $ Cov(\bm{A} \cdot \xi, \, \bm{B} \cdot \eta) = \bm{A} \cdot Cov(\xi,\eta) \cdot \bm{B}' $
+\end{enumerate}
 \end{karte}
 
-\begin{karte}[Stochastik-I]{}[]
+\begin{karte}[Stochastik-I]{Diagonalisierbarkeit \\ Symmetrie \\Eigenwerte \\ Wurzel}[3.6.3]
+Wenn \textbf{C} exist für einen ZV, dann ist sie symm, dann ist \tb{C} n-neg definit und diag-bar mit reellen, n-neg Eigen-W zur Diag-Matr \tb{D} mit der orthog. Matrix \tb{Q},und es gelten:
+\begin{gather*}
+\bm{Q' \cdot C \cdot Q = D} \\
+\left( \bm{Q \cdot D^{\frac{1}{2}} \cdot Q^{-1}} \right) \left( \bm{Q \cdot D^{\frac{1}{2}} \cdot Q^{-1}} \right) = \left( \bm{Q \cdot D \cdot Q^{-1}} \right) = \bm{C} \\
+\bm{C^{\frac{1}{2}}} := \bm{Q \cdot D^{\frac{1}{2}} \cdot Q^{-1}} \\
+\end{gather*}
+\textit{(Die Wurzel aus \tb{D} ist komponentenweise definiert)}
 \end{karte}
 
-\begin{karte}[Stochastik-I]{}[]
+\begin{karte}[Stochastik-I]{erweiterte Definition \\ Charakteristische \\ Funktion \\ für Zufallsvektoren}[3.6.4]
+Sei $\xi$ ein $n$-dim ZV über $(\Omega,\calA,\PP)$, dann ist die \tb{Charakteristische Funktion} dazu (mit dem üblichen Skalarprodukt $t' \cdot x im \R^n$):
+$$
+C_\xi \equiv C : \R^n \ni t \rightarrow C(t) := \E(e^{it' \cdot \xi}) = \int_{}^{} e^{it' \cdot x} \PP_\xi (\t{d} x) \in \C
+$$
+Bemerkung: Die Verteilungen $\PP_\xi$ und $\PP_\eta$ zweier ZV auf $(\R^n, \calB_n^*)$ sind identisch gdw ihre Charakteristischen Funktionen übereinstimmen!
 \end{karte}
 
 \end{document}
