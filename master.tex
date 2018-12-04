@@ -2,6 +2,11 @@
 % \VSPACE*{... CM} => MACHT IMMERIMMERIMMER DEN VSPACE :):):):):)
 % PROBLEM: kleine griechische Buchstaben nicht fett mit \bm-Befehl
 % PROBLEM: z.B. 3.6.4: dicke Buchstaben sollen "normal" ohne Mathe-Modus sein, aber mit dem Mal-Zeichen passt das nicht so ganz von alleine, muss irgendwie mit \, oder so getäuscht werden, habe jetzt die "krummen" Mathe-Symbol-Buchstaben genommen :()
+% DAZU: \bm{ ... } geht nur für Buchstaben, bei Symbolen wie \cdot streikt es
+% IDEE: finde wichtige Formeln, z.B. Transformationsformel, mit Wortsuche über die Anzahl der fundstellen :):):):):):):):):):):):):)
+% KLAMMERN: immer schön auf das Highlighting schauen :):):)
+% alle Stellen mit \textrm{\tb{...}}) ersetzen durch \ttb{...}
+
 \documentclass[a7paper,11pt,print,grid=front]{kartei}
 \usepackage[T1]{fontenc}
 \usepackage{ngerman}
@@ -883,9 +888,8 @@ Sei $\xi$ ein ZV in $(\R^n, \calB_n^*)$ über $(\Omega,\calA,\PP)$ mit Vert $\PP_
 $\eta : (\Omega,\calA,\PP) \ni w \longrightarrow \eta(w) := T(\xi(w)) \in (\R^n,\calB_n^*)$ \mmthree \newline
 mit der Lebesque-Dichte \mmthree \newline
 $g_\eta \equiv g :  \R^n \ni y \rightarrow g(y) := f(T^{-1}(y))| det((T^{-1}) (y)) | \in \R_\geq$
-
 \end{karte}
-
+% !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 \begin{karte}[Stochastik-I]{Erwartungswert \\ Vektor und \\ Matrix}[unter 3.6.1]
 \begin{spreadlines}{10 pt}
 Zufallsvektor, Vert-Fkt und Erw-Wert Zufallsvektor \newline
@@ -921,27 +925,172 @@ Seien \textbf{A, B, C} Matrizen mit Dim $l \times n, m \times p, l \times p$, \n
 $\xi = (\xi_i)_{1 \leq i \leq n}, \, \eta = (\eta_i)_{1 \leq i \leq p} $ Zufallsvektoren und \newline
 $ \bm{\vartheta} = (\vartheta_{i,j})_{1 \leq i \leq n, \, 1 \leq j \leq m}$ eine zufällige Matrix, dg:
 \begin{enumerate}[label=(\roman*)]
-\item $ \E(\bm{A \cdot \vartheta \cdot B + C}) = \bm{A} \cdot \E(\bm{\vartheta}) \cdot \bm{B} + \bm{C} $
-\item $ Cov(\bm{A} \cdot \xi, \, \bm{B} \cdot \eta) = \bm{A} \cdot Cov(\xi,\eta) \cdot \bm{B}' $
+\item $ \E( \ttb{A} \cdot \vartheta \cdot \ttb{B} + \textbf{C}) = \ttb{A} \cdot \E(\vartheta \cdot \ttb{B} + \ttb{C} $
+\item $ Cov(\ttb{A} \cdot \xi, \, \ttb{B} \cdot \eta) = \ttb{A} \cdot Cov(\xi,\eta) \cdot \ttb{B}' $
 \end{enumerate}
 \end{karte}
 
 \begin{karte}[Stochastik-I]{Diagonalisierbarkeit \\ Symmetrie \\Eigenwerte \\ Wurzel}[3.6.3]
-Wenn \textbf{C} exist für einen ZV, dann ist sie symm, dann ist \tb{C} n-neg definit und diag-bar mit reellen, n-neg Eigen-W zur Diag-Matr \tb{D} mit der orthog. Matrix \tb{Q},und es gelten:
+Wenn \textbf{C} exist für einen ZV, dann ist sie symm, dann ist \tb{C} n-neg definit und diag-bar mit reellen, n-neg Eigen-W zur Diag-Matr \tb{D} mit der orthog. Matrix \tb{Q}, und es gelten:
 \begin{gather*}
-\bm{Q' \cdot C \cdot Q = D} \\
-\left( \bm{Q \cdot D^{\frac{1}{2}} \cdot Q^{-1}} \right) \left( \bm{Q \cdot D^{\frac{1}{2}} \cdot Q^{-1}} \right) = \left( \bm{Q \cdot D \cdot Q^{-1}} \right) = \bm{C} \\
-\bm{C^{\frac{1}{2}}} := \bm{Q \cdot D^{\frac{1}{2}} \cdot Q^{-1}} \\
+\textrm{\tb{Q}}' \cdot \textrm{\tb{C}} \cdot \textrm{\tb{Q}} = \textrm{\tb{D}} \\
+\left( \textrm{\tb{Q}} \cdot \textrm{\tb{D}}^{\frac{1}{2}} \cdot \textrm{\tb{Q}}^{-1} \right) \left( \textrm{\tb{Q}} \cdot \textrm{\tb{D}}^{\frac{1}{2}} \cdot \textrm{\tb{Q}}^{-1} \right) = \left( \textrm{\tb{Q}} \cdot \textrm{\tb{D}} \cdot \textrm{\tb{Q}}^{-1} \right) = \textrm{\tb{C}} \\
+\textrm{\tb{C}}^{\frac{1}{2}} := \textrm{\tb{Q}} \cdot \textrm{\tb{D}}^{\frac{1}{2}} \cdot \textrm{\tb{Q}}^{-1} \\
 \end{gather*}
 \textit{(Die Wurzel aus \tb{D} ist komponentenweise definiert)}
 \end{karte}
 
 \begin{karte}[Stochastik-I]{erweiterte Definition \\ Charakteristische \\ Funktion \\ für Zufallsvektoren}[3.6.4]
-Sei $\xi$ ein $n$-dim ZV über $(\Omega,\calA,\PP)$, dann ist die \tb{Charakteristische Funktion} dazu (mit dem üblichen Skalarprodukt $t' \cdot x im \R^n$):
+Sei $\xi$ ein $n$-dim ZV über $(\Omega,\calA,\PP)$, dann ist die \tb{Charakteristische Funktion} dazu (mit dem üblichen Skalarprodukt $t' \cdot x \in \R^n$):
 $$
-C_\xi \equiv C : \R^n \ni t \rightarrow C(t) := \E(e^{it' \cdot \xi}) = \int_{}^{} e^{it' \cdot x} \PP_\xi (\t{d} x) \in \C
+C_\xi \equiv C : \R^n \ni t \rightarrow C(t) := \E(e^{it' \cdot \xi}) = \int_{}^{} e^{it' \cdot x} \, \PP_\xi (\t{d} x) \in \C
 $$
 Bemerkung: Die Verteilungen $\PP_\xi$ und $\PP_\eta$ zweier ZV auf $(\R^n, \calB_n^*)$ sind identisch gdw ihre Charakteristischen Funktionen übereinstimmen!
+\end{karte}
+
+\begin{karte}[Stochastik-I]{multivariate \\ Normalverteilung}[3.6.6]
+Sei $\eta = \eta_1, ... \, , \eta-m)'$ ein $m$-dim Z-Vektor über $(\Omega,\calA,\PP)$, mit Kompon \tb{IID} vert nach $\calN(0,1)$, \tb{A} sei eine $n \times m$-Matrix und $\mu = (\mu_1, ,,, \, , \mu_n)' \in \R^n$, dann ist die Z-Variable $\xi$ $n$-dim Norm-Vert mit Kov-Matrix \tb{C} und Erw-Wert $\mu$:
+\setlength\abovedisplayskip{5 pt}
+\begin{gather*}
+\xi = \textrm{\tb{A}} \cdot \eta + \nu \quad (\in \R^n) \\
+\textrm{\tb{C}} = {\textrm{\tb{A}} \cdot \textrm{\tb{A}}'} \\
+\xi \sim \calN_n (\mu, \bm{C}) \\
+\end{gather*}
+\end{karte}
+
+\begin{karte}[Stochastik-I]{Erwartungswert \\ und Varianz \\ multivariate Normalverteilung}[3.6.7]
+Sei $\xi \sim \calN_n(\mu, \textrm{\tb{C}})$ mit $\xi = \textrm{\tb{A}} \cdot \eta + \nu$, wobei $\bm{A}$ eine \newline
+$n \times k$-matrix, $\eta = (\eta_1, ... \, , \eta-n)' \,  IID$ mit jeweils \newline \cmone
+$\calN(0,1)$-vert Komponenten und $\mu = (\mu_1, ... \, , \mu_n)' \in \R^n$, dg:
+$$
+\E(\xi) = \mu, \quad \textrm{Var}(\xi) = \bm{C}
+$$
+\end{karte}
+
+\begin{karte}[Stochastik-I]{Charakteristische \\ Funktion \\ n-dim \\ Normalverteilung}[3.6.8]
+Sei $\xi \sim \calN_n(\mu, \ttb{C})$ eine $n$-dim Norm-Vert, dann hat die zugehörige Char Fkt $C_\xi$ die Gestalt \newline \cmone
+$$
+C_\xi \equiv C : \R^n \ni t \rightarrow C(t) := e^{(it' \cdot \mu)} \, e^{\left( -\frac{1}{2}t' \cdot \ttb{C} \cdot t \right)}
+$$
+\end{karte}
+
+\begin{karte}[Stochastik-I]{mehrdimensionale \\ Lebesgue-Dichte \\ Normal-Verteilung}[3.6.9]
+Sei $\xi \sim \calN_n(\mu,\ttb{C})$ eine positiv-definite $n \times n$-Matrix, dg
+$ \t{d}\PP_\xi = f \, \t{d}\lambda^n$ mit $ f_\xi \equiv f : \R^n \longrightarrow \R_\geq $ und
+$$
+f(x) := \frac{1}{(2 \pi)^\frac{n}{2} \left( \t{det}(\ttb{C}) \right)^\frac{1}{2}} e^{\left( -\frac{1}{2} (x - \mu)' \cdot \ttb{C}^{-1} \cdot (x - \mu) \right)}
+$$
+\end{karte}
+
+\begin{karte}[Stochastik-I]{Existenzprüfung \\ n-dimensionale \\ Normal-Verteilung \\ Zufallsvektor}[3.6.10]
+Sei $\xi$ ein $n$-dimensionaler Zufallsvektor mit Var-Kovar Matrix \tb{C} und Erw-Wert $\mu = (mu_1, ... \, , \mu_n)'$, dann sind äquivalent:
+\begin{enumerate}[label=(\roman*)]
+\item $ \forall t \in \R: t' \cdot \xi $ besitzt (univariate) Normalverteilung
+\item $\xi \sim \calN_n(\mu,\ttb{C}) $
+\end{enumerate}
+\end{karte}
+
+\begin{karte}[Stochastik-I]{Aufteilung \\ Zufallsvektor \\ in Stücke}[3.6.11]
+Sei $ \xi \sim \calN_n(\mu,\ttb{C}) $ und bezeichne mit $\xi_{(1)} = (\xi_1, ... \, , \xi_k)' $ bzw $ \xi_{(2)} = (\xi_{(k+1}, ... \, , \xi_n)' $, wobei $ 1 \leq k \leq n-1 $ fest vorg; bezeichne entsprechend
+$$
+\mu = (\mu_{(1)}',\mu_{(2)}')', \quad \ttb{C} = \left(
+\begin{matrix}
+\ttb{C}_{1,1} & \ttb{C}_{1,2} \\
+\ttb{C}_{2,1} & \ttb{C}_{2,2} \\
+\end{matrix} \right)
+$$
+mit $\mu_{(i)} = \E(\xi_{(i)}) $ und $\tb{C}_{i,j} = \t{Cov}(\xi_{(i)},\xi_{(j)})$ für $ 1 \leq i,j \leq 2 $. Aus der Definition von $\calN_n(\mu,\ttb{C})$ folgt dann, dass \newline $\xi_{(1)} \sim \calN_k (\mu_{(1)},\ttb{C}_{1,1}) $ bzw $\xi_{(2)} \sim \calN_{n-k} (\mu_{(2)},\ttb{C}_{2,2}) $. 
+\end{karte}
+
+\begin{karte}[Stochastik-I]{Unabhängigkeit \\ geteilter \\ Zufallsvektor}[3.6.12]
+Sei $\xi$ ein Zufallsvektor wie aus Beispiel 3.6.11, dann gilt die folgende Äquivalenz:
+\begin{enumerate}[label=(\roman*)]
+\item $\xi_{(1)}$ und $\xi_{(2)}$ sind unabhängig
+\item $ \ttb{C}_{1,2} = 0 $
+\end{enumerate}
+\end{karte}
+
+\begin{karte}[Stochastik-I]{Verschiebung \\ und \\ Normierung}[3.6.13]
+Seien $ \xi \sim \calN_n(\mu,\ttb{C}), \, \ttb{B} $ eine $ m \times n $-Matrix und $b \in \R^m$, dg für $\eta = \ttb{B} \cdot \xi + b$:
+\cmonehalf
+$$
+\eta \sim \calN_m (\ttb{B} \cdot \mu + b, \, \ttb{B} \cdot \ttb{C} \cdot \ttb{B}')
+$$
+\end{karte}
+
+\begin{karte}[Stochastik-I]{Unabhängigkeit \\ zweier \\ Zufallsvektoren}[3.6.14]
+Es seien $\xi \sim \calN_n (\mu,\ttb{C})$, \tb{A} eine $p \times n$-Matrix und \tb{B} eine $q \times n$-Matrix, dann werden durch $\eta = \ttb{a} \cdot \xi$ und $\vartheta = \ttb{B} \cdot \xi$ zwei neue norm-vert Z-Vektoren definiert und es gilt:
+\cmhalf \newline
+\begin{enumerate}[label=(\roman*)]
+\item $\eta$ ist unabhängig von $\vartheta$
+\item Cov($\eta,\vartheta$) = $\ttb{A} \cdot \ttb{C} \cdot \ttb{B}' = 0$
+\end{enumerate}
+\end{karte}
+
+\begin{karte}[Stochastik-I]{Anwendung \\ Unabhängigkeit \\ Zufallsvektoren}[3.6.15]
+Es seien $\xi = (\xi_1, ... \, , \xi_n)' \sim \calN_n(\mu,\sigma^2\ttb{I}_n)$, wobei \newline
+$\mu = (\mu_1, ... \, , \mu_n)' \in \R^n, \ \ttb{I}_n$ bezeichne die $n \times n$-Einheitsmatrix, $\sigma^2 > 0$, mit anderen Worten: $(\xi_i)_{1 \leq i \leq n} $ sind unabhängig und $ \xi_i \sim \calN(\mu_i,\sigma^2)$, dann sind voneinander unabh Z-Variable:
+\cmhalf \newline
+$$
+\overline{\xi} = \frac{1}{n} \summ{i=1}{n}{\xi_i}, \quad S_n^2 = \frac{1}{n-1} \summ{i=1}{n}{(\xi_i - \overline{\xi})^2}
+$$
+\end{karte}
+
+\begin{karte}[Stochastik-I]{Chiquadrat- \\ Verteilung \\ über symmetrische \\ Matrix}[3.6.16]
+Sei $\eta = (\eta_1, ... \, , \eta_n)' \sim \calN_n (0, \ttb{I}_n)$, \tb{A} symm $n \times n$-Matrix, dann wird zufällige \tb{quadratische Form} definiert durch
+\setlength\abovedisplayskip{7 pt}
+$$
+\eta' \cdot \ttb{A} \cdot \eta = \summ{1 \leq i,j \leq n}{}{\eta_i a_{i,j} \eta_j}
+$$
+Diagonalisierbarkeit \& Orthogonalität $\Longrightarrow$ rechte Seite Lin-Komb unabh chiquadrat-vert Z-Variable $\xi_i^2$
+%\setlength\abovedisplayskip{10 pt}
+$$
+\eta' \cdot \ttb{A} \cdot \eta = \summ{i=1}{n}{\lambda_i \, \xi_i^2} \\
+$$
+\end{karte}
+
+\begin{karte}[Stochastik-I]{Spur \\ einer \\ quadratischen \\ Matrix}[3.6.18]
+Es sei \tb{A} eine idempotente, symm $n \times n$-Matrix mit Eigenwerten $\lambda_1, ... \, , \lambda_n)'$, dann $\forall \lambda_i : \lambda_i \in \{0,1\}$ und es gilt für die \tb{Spur} von \tb{A}:
+\setlength\abovedisplayskip{7 pt}
+$$
+\t{tr}(\ttb{A}) = \summ{1 \leq i \leq n}{}{\lambda_i}
+$$
+Die Spur ist definiert als
+\setlength\abovedisplayskip{7 pt}
+$$
+\t{tr}(\ttb{A}) = \summ{1 \leq i \leq n}{}{a_{i,i}}
+$$
+\end{karte}
+
+\begin{karte}[Stochastik-I]{Normalverteilung}[3.3.13]
+
+\end{karte}
+
+\begin{karte}[Stochastik-I]{}[]
+\end{karte}
+
+\begin{karte}[Stochastik-I]{}[]
+\end{karte}
+
+\begin{karte}[Stochastik-I]{}[]
+\end{karte}
+
+\begin{karte}[Stochastik-I]{}[]
+\end{karte}
+
+\begin{karte}[Stochastik-I]{}[]
+\end{karte}
+
+\begin{karte}[Stochastik-I]{}[]
+\end{karte}
+
+\begin{karte}[Stochastik-I]{}[]
+\end{karte}
+
+\begin{karte}[Stochastik-I]{}[]
+\end{karte}
+
+\begin{karte}[Stochastik-I]{}[]
 \end{karte}
 
 \end{document}

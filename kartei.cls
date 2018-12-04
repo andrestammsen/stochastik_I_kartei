@@ -42,6 +42,8 @@
 \newcommand{\eps}{\varepsilon}
 \newcommand{\dd}{\t{d}}
 \newcommand{\tb}[1]{\textbf{#1}}
+\newcommand{\tt}[1]{\textrm{#1}}
+\newcommand{\ttb}[1]{\textrm{\tb{#1}}}
 
 \newcommand{\calA}{\mathscr{A}}
 \newcommand{\calB}{\mathscr{B}}
