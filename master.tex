@@ -1063,34 +1063,110 @@ $$
 \end{karte}
 
 \begin{karte}[Stochastik-I]{Normalverteilung}[3.3.13]
-
+Eine ZV $\xi$ hat \tb{Normalverteilung} zu Parametern \newline
+$\mu \in \R, \, \sigma^2 > 0$, kurz$\xi \sim \calN(\mu, \sigma^2)$, falls $\PP_\xi$ abs-stet bzgl $\lambda$ mit allg Dichte-Fkt oder 
+$$
+f_{\mu,\sigma^2} \equiv (\R,\calB^*) \ni x \longrightarrow f(x) \equiv f(x;\mu,\sigma^2)
+$$
+\mmone
+$$
+f(x;\mu,\sigma^2) := \frac{1}{\sqrt{2 \pi \sigma^2}} \ \t{exp}\left( - \frac{(x - \mu)^2}{2 \sigma^2} \right) \in \R_{\geq} \\
+$$
 \end{karte}
 
-\begin{karte}[Stochastik-I]{}[]
+\begin{karte}[Stochastik-I]{Standard- \\ Normalverteilung}[3.3.13]
+Eine \tb{Standard-Normalverteilung} liegt vor wenn $\newline
+\mu = 0, \, \sigma^2 = 1$, also $\xi \sim \calN(0,1)$. Dichte und Vert-Fkt:
+\cmhalf \\
+$$
+\phi: \R \ni x \longrightarrow \phi(x) := \frac{1}{\sqrt{2 \pi}} \t{exp} \left( - \frac{x^2}{2} \right) \in \R_\geq
+$$
+\mmone \\
+$$
+\Phi: \R \ni x \Longrightarrow \phi(x) := \int_{-\infty}^{x} \phi(tI \lambda(\dd t) \in [0,1]
+$$
 \end{karte}
 
-\begin{karte}[Stochastik-I]{}[]
+\begin{karte}[Stochastik-I]{Informationen \\ zur \\ Normalverteilung}[3.3.14]
+Seien $\xi \sim \calN(\mu,\sigma^2) $ und $\eta \sim \calN(0,1)$:
+\begin{enumerate}[label=\roman*), noitemsep]
+\item Dichte $f_{\mu,\sigma^2} $ von $\xi$ ist symm um $\mu$, Maximum im Symm-Zentrum $\mu$ - dem \tb{Lokationsparameter} - und Wendepunkte bei $\mu \pm \sigma$.
+\item Variable $\sigma \eta + \mu$ hat $\calN(\mu,\sigma^2)$-Verteilung
+\item Variable $(\xi - \mu) / \sigma$ hat $\calN(0,1)$-Vert. Diese Transformation nenn man \tb{Standardisieren}.
+\item Lesen der Tafel mit $\Phi(x) = 1 - \Phi(-x)$.
+\end{enumerate}
 \end{karte}
 
-\begin{karte}[Stochastik-I]{}[]
+\begin{karte}[Stochastik-I]{Normalverteilungsfamilie \\ abgeschlossen \\ unter \\ Faltung}[3.3.15]
+Seien $\xi_1,\xi_2$ unabh Z-Variablen mit $\xi_1 \sim \calN(\mu_1,\sigma_1^2)$ und $\xi_2 \sim \calN(\mu_2,\sigma_2^2)$, dg:
+\cmonehalf \newline
+$$
+\xi_1 + \xi_2 \sim \calN(\mu_1 + \mu_2, \, \sigma_1^2 + \sigma_2^2)
+$$
 \end{karte}
 
-\begin{karte}[Stochastik-I]{}[]
+\begin{karte}[Stochastik-I]{Gamma-Verteilung}[3.3.16]
+\raggedright{Z-Variable $\xi$ hat \tb{Gamma-Verteilung} zu Parametern $p > 0, \ \lambda > 0$, kurz $\xi \sim \Gamma(p,\lambda)$, falls $\PP_\xi$ abs-stet bzgl $\lambda$ mit Dichte-Fkt und \tb{Eulers Gamma-Funktion}: \mmthree \\}
+\centering{$\gamma_{p,\lambda} \equiv \gamma : \R_> \ni x \rightarrow \gamma_{p,\lambda}(x) \equiv \gamma(x; \, p,\lambda) $}
+$$
+\gamma(x; \, p,\lambda) := \frac{\lambda^p x^{p-1} \t{exp}(-\lambda x)}{\Gamma(p)} \in \R_\geq
+$$
+$$
+\Gamma(p) := \int_{0}^{\infty}t^{p-1}\t{exp}(-1)\dd t
+$$
+%\end{gather*}
 \end{karte}
 
-\begin{karte}[Stochastik-I]{}[]
+\begin{karte}[Stochastik-I]{Exponential- \\ Verteilung}[3.3.17]
+Z-Variable $\xi$ gamma-vert mit Parametern $p = 1, \lambda > 0$, also $\xi \sim \Gamma(1,\lambda)$ heißt \tb{exponential-verteilt} zum \newline
+Parameter $\lambda$, kurz $\xi \sim EXP(\lambda)$. Durch Einsetzen von \newline
+$p = 1$ ergibt sich aus der allg Formel:
+\cmhalf \\
+$$
+\gamma(x; 1, \lambda) := \lambda \t{exp}(-\lambda x)
+$$
 \end{karte}
 
-\begin{karte}[Stochastik-I]{}[]
+\begin{karte}[Stochastik-I]{Chiquadrat- \\ Verteilung}[3.3.17]
+Z-Variable $\xi$ gamma-vert mit Parametern $p := k \in \N,$ \newline
+$\lambda = 1/2$ und $\xi \sim \Gamma(k/2, 1/2),\lambda)$ heißt \tb{chiquadrat-verteilt} mit $k$ \tb{Freiheitsgraden}, kurz $\xi \sim \chi_k^2$. %Durch Einsetzen von $p = 1$ ergibt sich aus der allg Formel:
+$$
+KOMPL FORMEL, EINSETZEN ALLG FORM
+$$
 \end{karte}
 
-\begin{karte}[Stochastik-I]{}[]
+\begin{karte}[Stochastik-I]{Eigenschaften \\ Gamma-Verteilung}[3.3.18]
+Eigenschaften der Gamma-Verteilung:
+\begin{enumerate}[label=(\roman*)]
+\item $\forall p > 0:\gamma(p+1) = p\gamma(p)$ \qquad (mittels part. Int.)
+\item $\xi \sim \gamma(p,\lambda)$ gdw $\lambda \cdot \sim \gamma(p,1)$, \newline
+dh $1/\lambda$ ist ein Skalenparameter
+\item Modellierung n-neg Ereignisse, z.B. Vert-Modell \newline
+Lebensdauer oder räumliche Abst Ursache/Wirkung
+\end{enumerate}
 \end{karte}
 
-\begin{karte}[Stochastik-I]{}[]
+\begin{karte}[Stochastik-I]{Beta- \\ Verteilung}[3.3.19]
+\raggedright{Z-Variable $\xi$ hat \tb{Beta-Verteilung} zu Parametern $r > 0, \ s > 0$, kurz $\xi \sim B(r,s)$, falls $\PP_\xi$ abs-stet bzgl $\lambda$ mit Dichte-Fkt und \tb{Beta-Funktion}: \\}
+\centering{$ \beta_{r,s} \equiv \beta : ]0,1] \ni x \longrightarrow \beta_{r,s} \equiv \beta(x; r,s) $}
+$$
+\beta(x; r,s) = \frac {x^{r-1} (1-x)^{s-1}}{B(r,s)} \in \R_\geq
+$$
+$$
+B(r,s) :) \frac{\Gamma(r)\Gamma(s)}{\Gamma(r+s)}
+$$
 \end{karte}
 
-\begin{karte}[Stochastik-I]{}[]
+\begin{karte}[Stochastik-I]{Zusammenhang \\ unabhängige \\ gamma-verteilte \\ Zufallsvariablen}[3.3.20]
+Für $p > 0, \ q > 0, \ \lambda > 0$ seien $\xi_1 \sim \Gamma(p,\lambda)$ und  $\xi_2 \sim \Gamma(q,\lambda)$ unabh Z-Variable, dann folgt:
+$$
+\eta_1 := \xi_1 + \xi_2 \t{ und } \eta_2 := \frac{\xi_1}{\xi_1 + \xi_2}
+$$
+sind ebenfalls wieder unabh mit
+$$
+\eta_1 \sim \Gamma(p+q,\lambda) \t{ und } \eta_2 \sim B(p,q)
+$$
 \end{karte}
-
+%\setlength\abovedisplayskip{0 pt}
+%\setlength{\jot}{3 pt}
 \end{document}
